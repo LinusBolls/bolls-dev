@@ -4,6 +4,11 @@ import Projects from "../data/projects.data";
 import ProjectCard from "../components/ProjectCard";
 import Image from "next/image";
 
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
+
+const codeString = "(num) => num + 1";
+
 const HomeCard = ({
   title,
   text,
@@ -32,12 +37,12 @@ const Page: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="h-screen">
+      <div className="h-screen relative bg-red-300">
         <Image
           src="/me.jpeg"
-          alt="Vercel Logo"
+          alt="Ich wenn"
           layout="fill"
-          className="absolute z-0"
+          className="absolute z-0 w-screen"
         />
         <HomeCard title="My Blog" text="dings" href="https://blog.bolls.dev" />
         <HomeCard
@@ -47,6 +52,9 @@ const Page: NextPage = () => {
         />
         <HomeCard title="Contact" text="dings" href="https://blog.bolls.dev" />
         <HomeCard title="Resume" text="dings" href="https://blog.bolls.dev" />
+        {/* <SyntaxHighlighter language="typescript" style={docco}>
+          {codeString}
+        </SyntaxHighlighter> */}
       </div>
 
       <main className="relative z-10">

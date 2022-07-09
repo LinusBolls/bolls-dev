@@ -17,8 +17,13 @@ function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
       <div className="relative h-40">
-        {imgs.map((i) => (
-          <Image src={i} layout="fill" alt="Sunset in the mountains" />
+        {imgs.map((i, idx) => (
+          <Image
+            src={i}
+            layout="fill"
+            alt="Sunset in the mountains"
+            key={idx}
+          />
         ))}
       </div>
       <div className="px-6 py-4">
@@ -30,14 +35,13 @@ function ProjectCard({ project }: ProjectCardProps) {
       </div>
       <div className="px-6 pt-4 pb-2">
         {tags.map((i, idx) => (
-          <Tag text={i} />
+          <Tag text={i} key={idx} />
         ))}
       </div>
       <div className="flex flex-row gap-6 px-6 py-4 pt-0">
         {stack.map((i, idx) => (
-          <div className="relative w-5 h-5">
+          <div className="relative w-5 h-5" key={idx}>
             <Image
-              key={idx}
               src={i.icon}
               layout="fill"
               alt={i.name + " logo"}
