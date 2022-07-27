@@ -19,6 +19,15 @@ a {
   box-sizing: border-box;
 }
 
-h2 {
+.markdown h2 {
   font-weight: bold;
+
+  font-size: 1.75rem;
+}
+.markdown h3 {
+  font-weight: bold;
+}
+.markdown a {
+  color: cyan;
+  text-decoration: underline;
 }

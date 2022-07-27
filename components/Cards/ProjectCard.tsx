@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { Project } from "../data/projects.data";
+import { Project } from "../../data/projects.data";
 
 const Tag = ({ text }: { text: string }) => (
   <span className="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
