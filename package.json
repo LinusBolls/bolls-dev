@@ -1,18 +1,20 @@
 {
   "name": "bolls-dev",
   "module": "src/index.ts",
-  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/qrcode": "^1.5.5",
+    "node-html-to-image": "^5.0.0",
+    "qrcode": "^1.5.4",
+    "sharp": "^0.33.5"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
   "scripts": {
     "dev": "bun run --watch src/index.ts & bun run bun.config.ts",
     "build": "bun run src/index.ts",
     "deploy": "bun run build; scp -r out/* bolls:/www/linus-bolls-dev/"
   },
-  "devDependencies": {
-    "@types/bun": "latest",
-    "@types/qrcode": "^1.5.5",
-    "qrcode": "^1.5.4"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  }
+  "type": "module"
 }
