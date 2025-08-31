@@ -13,15 +13,10 @@ const bannerPath = join(outDir, "banner.webp");
 
 const avatarSizeRem = 15;
 
-await resizeToSquare(
-  avatarPath,
-  join(outDir, "avatar.resized.webp"),
-  avatarSizeRem * 16 * 3
-);
-
 const vcard = `BEGIN:VCARD
 VERSION:3.0
 TITLE:Fullstack Freelancer
+PHOTO;VALUE=URL:https://linus.bolls.dev/avatar.webp
 N;CHARSET=UTF-8:Bolls;Linus;;;
 FN;CHARSET=UTF-8: Linus Bolls
 URL;PRIVATE:https://linus.bolls.dev
@@ -123,6 +118,15 @@ const addContactQrCodeSvg = await QRCode.toString(vcardDataUri, {
   errorCorrectionLevel: "L",
 });
 
+const sharedHead = `
+<meta http-equiv="Cache-Control" content="public, max-age=86400, immutable">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,${encodeURIComponent(
+          faviconSvg
+        )}">
+`;
+
 async function site() {
   return `<!DOCTYPE html>
 <html lang="en">
@@ -176,7 +180,7 @@ async function site() {
             <h1 style="font-size: 2.5rem;margin-bottom:1rem;font-weight:700">Linus Bolls</h1>
             <div style="height: 15rem; width: 15rem">
     <img alt="Picture of me" src="${inlineWebp(
-      join(outDir, "avatar.resized.webp")
+      join(outDir, "avatar.webp")
     )}" style="background:#0d0d0d;width: 15rem; height: 15rem; border-radius: 50%; object-fit: cover; line-height:15rem;text-align:center">
     </div>
     </body>
