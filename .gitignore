@@ -2,6 +2,8 @@
 
 # Logs
 
+assets/videos
+
 logs
 _.log
 npm-debug.log_

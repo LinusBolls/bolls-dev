@@ -6,6 +6,8 @@ import { renderToString } from "react-dom/server";
 
 import MarkdownIt from "markdown-it";
 
+const HIGHLIGHT_EFFECT = false;
+
 const markdown = MarkdownIt({
   html: true,
 });
@@ -32,28 +34,50 @@ const bannerPath = join(outDir, "banner.webp");
 const ProjectCard: React.FC<{
   title: string;
   description: string;
-  imageSrc: string;
-}> = ({ title, description, imageSrc }) => {
+  imageSrc?: string;
+  videoSrc?: string;
+  url?: string;
+}> = ({ title, description, imageSrc, videoSrc, url }) => {
   return (
-    <div
+    <section
+      id={title}
+      data-project={title}
       className="project-card"
       style={{ display: "flex", flexDirection: "column" }}
     >
-      <img
-        src={imageSrc}
-        style={{ width: "100%", aspectRatio: 1.6, objectFit: "cover" }}
-      />
+      {imageSrc && (
+        <img
+          alt={title + " project thumbnail"}
+          src={imageSrc}
+          style={{
+            width: "100%",
+            aspectRatio: 1.6,
+            objectFit: "cover",
+            borderRadius: "0.25rem",
+          }}
+        />
+      )}
+      {videoSrc && (
+        <canvas
+          data-video={videoSrc}
+          style={{ width: "100%", aspectRatio: 1.6, borderRadius: "0.25rem" }}
+        />
+      )}
       <div style={{ padding: "2rem 1.5rem" }}>
-        <h2 style={{ margin: 0, fontSize: "2rem", fontWeight: "bold" }}>
-          {title}
-        </h2>
+        {url ? (
+          <a href={url} target="_blank">
+            <h2>{title}</h2>
+          </a>
+        ) : (
+          <h2>{title}</h2>
+        )}
         <div
           className="markdown"
           style={{ margin: 0, marginTop: "1rem", fontWeight: "normal" }}
           dangerouslySetInnerHTML={{ __html: markdown.render(description) }}
         />
       </div>
-    </div>
+    </section>
   );
 };
 
@@ -167,74 +191,78 @@ const projects = [
     imageSrc: "medtime-thumbnail.resized.webp",
     title: "MedTime",
     url: "https://vettime.de",
-    description: `I'm currently building a time-tracking solution for veterinarians, and we already have around a dozen b2b customers.
-    When I joined my three co-founders, I took over their prototype, which was vibe coded using Replit - I'm all for vibe coding and quick validation, just *please* don't use Replit 🙃`,
+    description: `I'm currently building a **time tracking solution** for **veterinary clinics**, with already around a dozen customers.
+    <br>When I first joined my three co-founders, their prototype was **vibe-coded** using Replit and already had live users - I loved that they were efficient about validating the product, but this is by far the **messiest codebase** i ever took over... More power to vibe coders - but *please* don't use Replit lol`,
   },
   {
     imageSrc: "zentio-thumbnail.resized.webp",
     title: "Zentio",
     url: "https://zentio.io",
-    description: `During 2025, I did freelance fullstack development for Zentio during their pre-seed stage. They didn't have a dedicated designer to create high-fidelity designs, so I was given a lot of ownership in UI and UX questions. I mainly worked with React, tRPC, and Drizzle ORM.`,
+    description: `Zentio is a production planning tool for manfacturing companies. During 2025, I did **freelance fullstack development** for them during their pre-seed stage. Because they didn't have a dedicated designer to create high-fidelity designs, I was given a lot of ownership in **UI** and **UX** designs. <br>I enjoyed working with the team, and we got a lot done during that time.`,
   },
   {
     imageSrc: "flamingo-thumbnail.resized.webp",
     title: "Flamingo",
-    description: `For 1.5 years, my cofounder and I worked on Flamingo, a browser extension that added poweruser features like inboxes and text templates to the LinkedIn messenger. We created a whole new messenger ui which overlayed over LinkedIn.
-I reverse engineered the API
-In the end, the project failed because of the overly ambitious scope, and because we didn't properly validate the project - people just weren't willing to pay for it.
-I spent a lot of time reverse-engineering the LinkedIn API, so hit me up for any LinkedIn specific work.`,
+    description: `For almost two years, my co-founder and I worked on Flamingo, a **browser extension** that added poweruser features like inboxes and text templates to the **LinkedIn** messenger. We overlayed an entirely new messenger UI over LinkedIn's, and I had to **reverse engineer** over 50 of their API endpoints.
+    <br>
+    In the end, our scope was too ambitious, and we hadn't properly validated our features - people just weren't willing to pay for them.
+    <br>
+I spent a lot of time reverse-engineering and **scraping** the LinkedIn API, so I'm your guy for any LinkedIn-specific work.`,
   },
   {
-    imageSrc: "study-planner-thumbnail.resized.webp",
+    videoSrc: "study-planner-thumbnail",
+    // imageSrc: "study-planner-thumbnail.resized.webp",
     title: "CODE Study Planner",
     url: "https://planner.project.code.berlin",
-    description: `As a student, I wanted to give back to the CODE University community with a tool for students to plan their studies.
-Uses the GraphQL API of the internal CODE intranet called the <i>Learning Platform</i>. to puzzle everything together from a billion endpoints.
-I used the Ant Design component library to keep the same visual style as the <i>Learning Platform</i>.`,
+    description: `A webapp I originally built for myself to plan my studies at **CODE University**.
+<br>It has a kanban-like **drag-and-drop** interface that's powered by the **GraphQL API** of the universities intranet.
+I used the **Ant Design** component library to keep the same visual style as the CODE intranet.`,
   },
   {
     imageSrc: "versus-thumbnail.resized.webp",
     title: "Versus",
     url: "",
-    description: `As a side project for my friends, I'm building a mobile app where you can create leaderboards for any sport, be it chess or table kicker.
-Started out for beerpong.
-It's currently in beta testing with my friend group, and I'm planning to release it on the app store soon.
-React Native
-The backend is mostly maintained by a friend and is written in spring boot. Java has a bit of an antiquated reputation in the startup scene, but I have to say that I'm really enjoy it for its more opinionated thing.`,
+    description: `I have a specific friend group that I play a lot of **beerpong** with, so we decided to build a leaderboard for ourselves.
+    <br>After the first Google Sheets powered prototype quickly reached usability limitations, I spent two weeks designing the entire app in **Figma**.<br>
+    We knocked out the MVP during a **weekend-long hackathon**, and since then I've been on-and-off working on the app with a friend.<br>
+    The backend is written in **Java Spring Boot**, which I really enjoy the opinionated design of. The frontend is **React Native**.
+    <br>The app is actively used by us, and we even added support for other sports like table kicker and chess.
+    An **App Store** release is in the works.`,
   },
   {
     imageSrc: "splid-js-thumbnail.resized.webp",
     title: "splid.js",
-    url: "",
-    description: `[Splid](https://splid.app/english) is a free mobile app for sharing expenses, which I use a lot with friends. When I got annoyed that it didn't have a web client, I built one. In the process, I created a feature-complete SDK for the Splid API, which seems to be used by a few other people as well.`,
+    url: "https://github.com/LinusBolls/splid-js",
+    description: `**[Splid](https://splid.app/english)** is a free mobile app for sharing expenses, which I use a lot with friends. When I got annoyed that it didn't have a web client, I built one. <br>In the process, I **reverse engineered** a feature-complete **SDK** for the **Splid API**.`,
   },
   {
     imageSrc: "code-connect-thumbnail.resized.webp",
     title: "CODE Connect",
     url: "",
-    description: `For [Slash hackathon 2023](https://slash.berlin), I built and published an iOS app that allows students to book rooms using the Google Calendar API.
-First time using React Native`,
+    description: `For **[Slash hackathon 2023](https://slash.berlin)**, I built an iOS app that allows students to book rooms using the Google Calendar API.
+    <br>This was my first time using **React Native**, and my first time publishing an app to the **App Store**. The rooms in the floorplan are clickable, and dynamically generated from a **Figma SVG export**.`,
   },
   {
-    imageSrc: "casablanca-thumbnail.resized.webp",
+    videoSrc: "casablanca-thumbnail",
+    // imageSrc: "casablanca-thumbnail.resized.webp",
     title: "Casablanca AI",
     url: "https://casablanca.ai",
-    description: `In 2024 I freelanced for Casablanca, where I built features that integrated their no-code Webflow landing page with their API. I *hate* working with custom code in Webflow, and will never do it again.`,
+    description: `In 2024 I **freelanced** for Casablanca, where I built features that integrated their no-code **Webflow** landing page with their API. I *despise* working with **custom code** in Webflow, and will never do it again.`,
   },
   {
     imageSrc: "evil-twitter-thumbnail.resized.webp",
     title: "Evil Twitter",
     url: "",
-    description: `I don't use the darknet a lot, but I'm fascinated by its unique engineering challenges. Darknet sites are built to work with the highest security setting of the Tor Browser, which disables JavaScript, Svgs, Fonts, and more.
-I'm not planning to publically deploy this, it's more of an engineering challenge for myself.
-Pioneered some 
-Working on a transpiler for making state management using CSS more user friendly`,
+    description: `Websites on the darknet face some unique engineering challenges: They need to work with the highest security setting of the Tor Browser, which blocks essential web technologies like JavaScript, Svgs, and even Fonts.<br>
+    Evil Twitter is my attempt at a **darknet-ready webapp** with a modern user experience.<br>
+    It has seemingly impossible features like an infinite feed, buttons that don't refresh the entire site, and vector icons that don't use SVG tags. <br>It uses iframes, obscure HTTP headers, HTML features, and CSS attributes to work around these **limitations**. Some of these techniques are already out there, and some of them I believe I've **pioneered**. I'm not publically hosting this, but I'm planning to do a blog post on the techniques I used.`,
   },
   {
     imageSrc: "spaceprogram-thumbnail.resized.webp",
     title: "Landable Rocket",
     url: "https://spaceprogram.bolls.dev",
-    description: `During the summer of 2025, me and two other CODE students built a self-landing rocket from scratch over the course of five weeks. For the flight software running on a ESP-32 chip, we quickly switched from the beginner-friendly Arduino to the more professional ESP-IDF framework. I designed and 3D-printed over a dozen distinct mechanical parts.`,
+    description: `During the summer of 2025, me and two other CODE students built a **self-landing rocket** from scratch over the course of five weeks. We wrote our own software, soldered our own flight computer circuitry, and 3D-printed our own parts. <br>
+    For the flight software, we quickly switched from the beginner-friendly Arduino to the more professional **ESP-IDF** framework. I designed and **3D-printed** over a dozen distinct mechanical parts for the rocket.`,
   },
 ];
 
@@ -268,12 +296,40 @@ const Site: React.FC = () => {
         <style
           dangerouslySetInnerHTML={{
             __html: `
-            .markdown a {
+
+            h2 {
+              margin: 0;
+              font-size: 2rem;
+              font-weight: bold;
+            }
+
+            [data-project="splid.js"] h2::after {
+            content: " ";
+  
+            background: url(https://img.shields.io/github/stars/LinusBolls/splid-js) no-repeat center;
+
+            margin-left: 1rem;
+
+            width: 82px;
+            height: 20px;
+
+            display: inline-block;
+            }
+
+            
+            .markdown a, a:has(> h2) {
             color: inherit;
             text-decoration: underline;
             }
-                        .markdown a:hover {
+                        .markdown a:hover, a:hover:has(> h2) {
             text-decoration: none;
+            }
+
+            .markdown strong {
+            color: #EF4679;
+            }
+            .markdown p {
+              line-height: 1.3;
             }
             
             *{box-sizing:border-box;}.b:hover{background:#fff;color:#000!important}a.a:hover{color:#fff!important;border-left-width:2px!important;padding-right:0px!important}.a svg{fill:#aaa}a.a:hover svg{fill:#fff}
@@ -318,16 +374,40 @@ const Site: React.FC = () => {
      100% { transform: translateY(24rem); }
    }
 
-   .project-card {
-     animation: card-viewport-scale linear both;
+   .left-column-parallax .project-card {
+     animation: card-viewport-scale-left linear both;
      animation-timeline: view();
      animation-range: entry 20% exit 80%;
    }
 
-   @keyframes card-viewport-scale {
-     0% { transform: scale(1); }
-     50% { transform: scale(1.05); }
-     100% { transform: scale(1); }
+      .right-column-parallax .project-card {
+     animation: card-viewport-scale-right linear both;
+     animation-timeline: view();
+     animation-range: entry 20% exit 80%;
+   }
+
+   ${
+     HIGHLIGHT_EFFECT &&
+     `@keyframes card-viewport-scale-left {
+   0% { opacity: 0.1; }
+   20% { opacity: 0.1; }
+   
+   40% { opacity: 1; }
+   50% { opacity: 1; }
+
+   70% { opacity: 0.1; }
+   100% { opacity: 0.1; }
+   }
+        @keyframes card-viewport-scale-right {
+   0% { opacity: 0.1; }
+   20% { opacity: 0.1; }
+   
+   40% { opacity: 1; }
+   50% { opacity: 1; }
+
+   70% { opacity: 0.1; }
+   100% { opacity: 0.1; }
+   }`
    }
  }
 
@@ -336,6 +416,12 @@ const Site: React.FC = () => {
    .masonry-container {
      flex-direction: column !important;
    }
+    .project-card > div {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    padding-top: 1rem !important;
+    max-width: 32rem;
+    }
    
    .left-column-parallax,
    .right-column-parallax {
@@ -352,6 +438,113 @@ const Site: React.FC = () => {
           }}
         />
       </head>
+
+      <script
+        type="module"
+        dangerouslySetInnerHTML={{
+          __html: `import gsap from "https://cdn.skypack.dev/gsap@3";
+import ScrollTrigger from "https://cdn.skypack.dev/gsap@3/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const videos = [
+  {
+    id: "casablanca-thumbnail",
+    numFrames: 117,
+  },
+  {
+    id: "study-planner-thumbnail",
+    numFrames: 242,
+  },
+];
+
+for (const video of videos) {
+  const canvas = document.querySelector(
+    'canvas[data-video="' + video.id + '"]'
+  );
+  const ctx = canvas.getContext("2d");
+  const current = { i: 0 };
+  const images = [];
+  const path = (i) =>
+    "/videos/" + video.id + "/frame_" + String(i).padStart(4, "0") + ".webp";
+
+  function setCanvasSize(img) {
+    canvas.width = 568;
+    canvas.height = 355;
+  }
+  function draw(i) {
+    const img = images[i];
+    if (!img) return;
+    setCanvasSize(img);
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+  }
+
+  // Preload with createImageBitmap for speed (fallback to Image)
+  (async () => {
+    for (let i = 1; i <= video.numFrames; i++) {
+      const res = await fetch(path(i));
+      const blob = await res.blob();
+      images[i] = await createImageBitmap(blob).catch(async () => {
+        const im = new Image();
+        im.src = URL.createObjectURL(blob);
+        await im.decode();
+        return im;
+      });
+      if (i === 1) draw(1); // draw the first frame as soon as it's available
+    }
+    ScrollTrigger.create({
+      trigger: canvas,
+      start: "bottom bottom",
+      end: "+=1000",
+      pin: false,
+      scrub: true,
+      onUpdate: (self) => {
+        current.i = Math.round(
+          gsap.utils.clamp(
+            1,
+            video.numFrames,
+            1 + self.progress * (video.numFrames - 1)
+          )
+        );
+        draw(current.i);
+      },
+    });
+  })();
+}`,
+        }}
+      />
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+
+          minHeight: "100vh",
+        }}
+      >
+        <h2>Let's work together ツ</h2>
+        <div
+          className="markdown"
+          style={{
+            margin: 0,
+            marginTop: "1rem",
+            fontWeight: "normal",
+            maxWidth: "32rem",
+            padding: "0 1rem",
+          }}
+          dangerouslySetInnerHTML={{
+            __html: markdown.render(
+              `I'm an experienced fullstack and mobile developer.
+              <br><br>I think about problems from the user's perspective.
+              <br><br>I'm passionate about intuitive UX and effective meetings.
+              <br><br>Sounds like a match? **[Contact me on LinkedIn](https://www.linkedin.com/in/LinusBolls)**`
+            ),
+          }}
+        />
+      </div>
+
       <div
         className="masonry-container"
         style={{
@@ -359,6 +552,9 @@ const Site: React.FC = () => {
           maxWidth: "72rem",
           margin: "auto",
           gap: "1rem",
+          padding: "0 1rem",
+
+          paddingBottom: "12rem",
         }}
       >
         <div
@@ -543,20 +739,5 @@ async function generateBanner() {
   await fs.promises.rm(bannerPath + ".png");
 }
 generateBanner();
-
-async function resizeToSquare(
-  inputPath: string,
-  outputPath: string,
-  size: number
-) {
-  await sharp(inputPath)
-    .resize({
-      width: size,
-      height: size,
-      fit: "cover",
-      position: "center",
-    })
-    .toFile(outputPath);
-}
 
 await fs.promises.cp(assetsDir, outDir, { recursive: true });
