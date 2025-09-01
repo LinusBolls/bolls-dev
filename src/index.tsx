@@ -1,6 +1,9 @@
 import fs from "fs";
 import { join } from "path";
 
+import React from "react";
+import { renderToString } from "react-dom/server";
+
 import nodeHtmlToImage from "node-html-to-image";
 import QRCode from "qrcode";
 import sharp from "sharp";
@@ -11,7 +14,31 @@ const outDir = join(__dirname, "../out");
 const avatarPath = join(assetsDir, "avatar.webp");
 const bannerPath = join(outDir, "banner.webp");
 
-const avatarSizeRem = 15;
+const ProjectCard: React.FC<{
+  title: string;
+  description: string;
+  imageSrc: string;
+}> = ({ title, description, imageSrc }) => {
+  return (
+    <div
+      className="project-card"
+      style={{ display: "flex", flexDirection: "column" }}
+    >
+      <img
+        src={imageSrc}
+        style={{ width: "100%", aspectRatio: 1.6, objectFit: "cover" }}
+      />
+      <div style={{ padding: "2rem 1.5rem" }}>
+        <h2 style={{ margin: 0, fontSize: "2rem", fontWeight: "bold" }}>
+          {title}
+        </h2>
+        <p style={{ margin: 0, marginTop: "1rem", fontWeight: "normal" }}>
+          {description}
+        </p>
+      </div>
+    </div>
+  );
+};
 
 const vcard = `BEGIN:VCARD
 VERSION:3.0
@@ -118,31 +145,22 @@ const addContactQrCodeSvg = await QRCode.toString(vcardDataUri, {
   errorCorrectionLevel: "L",
 });
 
-const sharedHead = `
-<meta http-equiv="Cache-Control" content="public, max-age=86400, immutable">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,${encodeURIComponent(
-          faviconSvg
-        )}">
-`;
-
 const projects = [
   {
-    image: "medtime-thumbnail.png",
+    imageSrc: "medtime-thumbnail.png",
     title: "MedTime",
     url: "https://vettime.de",
     description: `I'm currently building a time-tracking solution for veterinarians, and we already have around a dozen b2b customers.
     When I joined my three co-founders, I took over their prototype, which was vibe coded using Replit - I'm all for vibe coding and quick validation, just *please* don't use Replit 🙃`,
   },
   {
-    image: "zentio-thumbnail.webp",
+    imageSrc: "zentio-thumbnail.webp",
     title: "Zentio",
     url: "https://zentio.io",
     description: `During 2025, I did freelance fullstack development for Zentio during their pre-seed stage. They didn't have a dedicated designer to create high-fidelity designs, so I was given a lot of ownership in UI and UX questions. I mainly worked with React, tRPC, and Drizzle ORM.`,
   },
   {
-    image: "flamingo-thumbnail.png",
+    imageSrc: "flamingo-thumbnail.png",
     title: "Flamingo",
     description: `For 1.5 years, my cofounder and I worked on Flamingo, a browser extension that added poweruser features like inboxes and text templates to the LinkedIn messenger. We created a whole new messenger ui which overlayed over LinkedIn.
 I reverse engineered the API
@@ -150,7 +168,7 @@ In the end, the project failed because of the overly ambitious scope, and becaus
 I spent a lot of time reverse-engineering the LinkedIn API, so hit me up for any LinkedIn specific work.`,
   },
   {
-    image: "study-planner-thumbnail.png",
+    imageSrc: "study-planner-thumbnail.png",
     title: "CODE Study Planner",
     url: "https://planner.project.code.berlin",
     description: `As a student, I wanted to give back to the CODE University community with a tool for students to plan their studies.
@@ -158,7 +176,7 @@ Uses the GraphQL API of the internal CODE intranet called the <i>Learning Platfo
 I used the Ant Design component library to keep the same visual style as the <i>Learning Platform</i>.`,
   },
   {
-    image: "versus-thumbnail.png",
+    imageSrc: "versus-thumbnail.png",
     title: "Versus",
     url: "",
     description: `As a side project for my friends, I'm building a mobile app where you can create leaderboards for any sport, be it chess or table kicker.
@@ -168,26 +186,26 @@ React Native
 The backend is mostly maintained by a friend and is written in spring boot. Java has a bit of an antiquated reputation in the startup scene, but I have to say that I'm really enjoy it for its more opinionated thing.`,
   },
   {
-    image: "splid-js-thumbnail.png",
+    imageSrc: "splid-js-thumbnail.png",
     title: "splid.js",
     url: "",
     description: `[Splid](https://splid.app) is a free mobile app for sharing expenses, which I use a lot with friends. When I got annoyed that it didn't have a web client, I built one. In the process, I created a feature-complete SDK for the Splid API, which seems to be used by a few other people as well.`,
   },
   {
-    image: "code-connect-thumbnail.png",
+    imageSrc: "code-connect-thumbnail.png",
     title: "CODE Connect",
     url: "",
     description: `For [Slash hackathon 2023](https://slash.berlin), I built and published an iOS app that allows students to book rooms using the Google Calendar API.
 First time using React Native`,
   },
   {
-    image: "casablanca-thumbnail.png",
+    imageSrc: "casablanca-thumbnail.png",
     title: "Casablanca AI",
     url: "https://casablanca.ai",
     description: `In 2024 I freelanced for Casablanca, where I built features that integrated their no-code Webflow landing page with their API. I *hate* working with custom code in Webflow, and will never do it again.`,
   },
   {
-    image: "evil-twitter-thumbnail.png",
+    imageSrc: "evil-twitter-thumbnail.png",
     title: "Evil Twitter",
     url: "",
     description: `I don't use the darknet a lot, but I'm fascinated by its unique engineering challenges. Darknet sites are built to work with the highest security setting of the Tor Browser, which disables JavaScript, Svgs, Fonts, and more.
@@ -196,30 +214,43 @@ Pioneered some
 Working on a transpiler for making state management using CSS more user friendly`,
   },
   {
-    image: "spaceprogram-thumbnail.webp",
+    imageSrc: "spaceprogram-thumbnail.webp",
     title: "Landable Rocket",
     url: "https://spaceprogram.bolls.dev",
     description: `During the summer of 2025, me and two other CODE students built a self-landing rocket from scratch over the course of five weeks. For the flight software running on a ESP-32 chip, we quickly switched from the beginner-friendly Arduino to the more professional ESP-IDF framework. I designed and 3D-printed over a dozen distinct mechanical parts.`,
   },
 ];
 
-async function site() {
-  return `<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta http-equiv="Cache-Control" content="public, max-age=86400, immutable">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+const Site: React.FC = () => {
+  return (
+    <html lang="en">
+      <head>
+        <meta
+          httpEquiv="Cache-Control"
+          content="public, max-age=86400, immutable"
+        />
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Linus Bolls - Contact Info</title>
-        <meta name="description" content="I'm Linus, a fullstack engineer with a passion for good UX and effective meetings ツ" />
-        <meta name="keywords" content="Linus Bolls, Software Engineer, Freelancer, Fullstack Developer, Web Developer, Berlin, Portfolio, LinkedIn">
+        <meta
+          name="description"
+          content="I'm Linus, a fullstack engineer with a passion for good UX and effective meetings ツ"
+        />
+        <meta
+          name="keywords"
+          content="Linus Bolls, Software Engineer, Freelancer, Fullstack Developer, Web Developer, Berlin, Portfolio, LinkedIn"
+        />
         <meta property="og:title" content="Linus Bolls - Contact Info" />
         <meta property="og:description" content="" />
         <meta property="og:image" content="/banner.webp" />
-        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,${encodeURIComponent(
-          faviconSvg
-        )}">
-        <style>*{box-sizing:border-box;}.b:hover{background:#fff;color:#000!important}a.a:hover{color:#fff!important;border-left-width:2px!important;padding-right:0px!important}.a svg{fill:#aaa}a.a:hover svg{fill:#fff}
+        <link
+          rel="icon"
+          type="image/svg+xml"
+          href={`data:image/svg+xml,${encodeURIComponent(faviconSvg)}`}
+        />
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `*{box-sizing:border-box;}.b:hover{background:#fff;color:#000!important}a.a:hover{color:#fff!important;border-left-width:2px!important;padding-right:0px!important}.a svg{fill:#aaa}a.a:hover svg{fill:#fff}
         	@media screen and (min-width: 800px) {
               body {justify-content:center}
               .b {display:none !important}
@@ -236,52 +267,221 @@ async function site() {
     color: #000;
     font-weight: 600
 }
-        </style>
-    </head>
-    <div style="display:grid;grid-template-columns: 1fr 1fr;gap:1rem; max-width: 72rem; margin: auto;grid-template-rows: masonry;">
-      ${projects
-        .map(
-          (project) => `<div style="display:flex;flex-direction:column">
-        <img src="${project.image}" style="width: 100%; aspect-ratio: 1.6; object-fit: cover">
-        <div style="padding: 2rem 1.5rem">
-          <h2 style="margin: 0; font-size: 2rem; font-weight: bold">${project.title}</h2>
-          <p style="margin: 0; margin-top: 1rem; font-weight: normal">${project.description}</p>
+
+
+@supports (animation-timeline: scroll()) {
+  .left-column-parallax {
+    animation: left-column-parallax linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0% 100%;
+  }
+  
+  @keyframes left-column-parallax {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-24rem); }
+  }
+
+    .right-column-parallax {
+    animation: right-column-parallax linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0% 100%;
+  }
+  
+     @keyframes right-column-parallax {
+     0% { transform: translateY(0); }
+     100% { transform: translateY(24rem); }
+   }
+
+   .project-card {
+     animation: card-viewport-scale linear both;
+     animation-timeline: view();
+     animation-range: entry 20% exit 80%;
+   }
+
+   @keyframes card-viewport-scale {
+     0% { transform: scale(1); }
+     50% { transform: scale(1.05); }
+     100% { transform: scale(1); }
+   }
+ }
+
+ /* Mobile responsive styles */
+ @media screen and (max-width: 768px) {
+   .masonry-container {
+     flex-direction: column !important;
+   }
+   
+   .left-column-parallax,
+   .right-column-parallax {
+     animation: none !important;
+     transform: none !important;
+   }
+   
+   .left-column-parallax,
+   .right-column-parallax {
+     width: 100% !important;
+   }
+ }
+         `,
+          }}
+        />
+      </head>
+      <div
+        className="masonry-container"
+        style={{
+          display: "flex",
+          maxWidth: "72rem",
+          margin: "auto",
+          gap: "1rem",
+        }}
+      >
+        <div
+          className="left-column-parallax"
+          style={{ display: "flex", flexDirection: "column", width: "50%" }}
+        >
+          {projects.slice(0, 5).map((project, index) => (
+            <ProjectCard key={index} {...project} />
+          ))}
         </div>
-      </div>`
-        )
-        .join("")}
-    </div>
-    <body style="margin:0;padding:0;min-height:100vh;display:flex;flex-direction:column-reverse;align-items:center;background: #000; color: #fff; font-size: 1rem; font-family: Arial">
-        <div style="display:flex;flex-direction:column;width:100%;max-width:32rem;padding:0 1rem 5rem 1rem">
-            <div style="display:flex; gap: 1rem">
-              <div class="qr" style="width:15rem;flex:1;display:flex;align-items:center; justify-content:center">            
-                <div style="position:relative">
-                  ${addContactSvg}
-                  ${addContactQrCodeSvg}  
-                </div>
+        <div
+          className="right-column-parallax"
+          style={{ display: "flex", flexDirection: "column", width: "50%" }}
+        >
+          {projects.slice(5).map((project, index) => (
+            <ProjectCard key={index + 5} {...project} />
+          ))}
+        </div>
+      </div>
+      <body
+        style={{
+          margin: 0,
+          padding: 0,
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column-reverse",
+          alignItems: "center",
+          background: "#000",
+          color: "#fff",
+          fontSize: "1rem",
+          fontFamily: "Arial",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+            maxWidth: "32rem",
+            padding: "0 1rem 5rem 1rem",
+          }}
+        >
+          <div style={{ display: "flex", gap: "1rem" }}>
+            <div
+              className="qr"
+              style={{
+                width: "15rem",
+                flex: 1,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <div style={{ position: "relative" }}>
+                <div dangerouslySetInnerHTML={{ __html: addContactSvg }} />
+                <div
+                  dangerouslySetInnerHTML={{ __html: addContactQrCodeSvg }}
+                />
               </div>
-                <div style="display:flex;flex-direction: column">
-            ${links
-              .map((i) => {
-                return `${
-                  i.href ? `<a target="_blank" href="${i.href}"` : "<div"
-                } class="a" style="width:100%;border-left: 0px solid #fff; padding-right:2px;display: flex; align-items: center; text-decoration: none; font-weight: bold; transition: all 0.05s; height: 3rem; color: #aaa"><div style="height: 100%; aspect-ratio: 1; display: flex; align-items: center; justify-content: center">${
-                  i.icon
-                }</div>${i.value}${i.href ? "</a>" : "</div>"}`;
-              })
-              .join("")}
-                </div>
             </div>
-            <a class="b" href="${vcardDataUri}" download="Linus_Bolls.vcf" style="border-radius:2px;margin-top: 1rem;display: flex; align-items: center; justify-content: center; text-decoration: none; color: #fff; font-weight: bold; transition: all 0.2s; width: 100%; min-height: 3rem; border: 1px solid #fff">Add to contacts</a>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              {links.map((link, index) => {
+                const Element = link.href ? "a" : "div";
+                return (
+                  <Element
+                    key={index}
+                    {...(link.href
+                      ? { target: "_blank", href: link.href }
+                      : {})}
+                    className="a"
+                    style={{
+                      width: "100%",
+                      borderLeft: "0px solid #fff",
+                      paddingRight: "2px",
+                      display: "flex",
+                      alignItems: "center",
+                      textDecoration: "none",
+                      fontWeight: "bold",
+                      transition: "all 0.05s",
+                      height: "3rem",
+                      color: "#aaa",
+                    }}
+                  >
+                    <div
+                      style={{
+                        height: "100%",
+                        aspectRatio: 1,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <div dangerouslySetInnerHTML={{ __html: link.icon }} />
+                    </div>
+                    {link.value}
+                  </Element>
+                );
+              })}
+            </div>
+          </div>
+          <a
+            className="b"
+            href={vcardDataUri}
+            download="Linus_Bolls.vcf"
+            style={{
+              borderRadius: "2px",
+              marginTop: "1rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              textDecoration: "none",
+              color: "#fff",
+              fontWeight: "bold",
+              transition: "all 0.2s",
+              width: "100%",
+              minHeight: "3rem",
+              border: "1px solid #fff",
+            }}
+          >
+            Add to contacts
+          </a>
         </div>
-            <h1 style="font-size: 2.5rem;margin-bottom:1rem;font-weight:700">Linus Bolls</h1>
-            <div style="height: 15rem; width: 15rem">
-    <img alt="Picture of me" src="${inlineWebp(
-      join(outDir, "avatar.webp")
-    )}" style="background:#0d0d0d;width: 15rem; height: 15rem; border-radius: 50%; object-fit: cover; line-height:15rem;text-align:center">
-    </div>
-    </body>
-</html>`;
+        <h1
+          style={{ fontSize: "2.5rem", marginBottom: "1rem", fontWeight: 700 }}
+        >
+          Linus Bolls
+        </h1>
+        <div style={{ height: "15rem", width: "15rem" }}>
+          <img
+            alt="Picture of me"
+            src={inlineWebp(join(outDir, "avatar.webp"))}
+            style={{
+              background: "#0d0d0d",
+              width: "15rem",
+              height: "15rem",
+              borderRadius: "50%",
+              objectFit: "cover",
+              lineHeight: "15rem",
+              textAlign: "center",
+            }}
+          />
+        </div>
+      </body>
+    </html>
+  );
+};
+
+async function site() {
+  return renderToString(<Site />);
 }
 
 await fs.promises.mkdir(outDir, { recursive: true });

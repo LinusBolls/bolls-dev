@@ -4,6 +4,8 @@
   "devDependencies": {
     "@types/bun": "latest",
     "@types/qrcode": "^1.5.5",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
     "node-html-to-image": "^5.0.0",
     "qrcode": "^1.5.4",
     "sharp": "^0.33.5"
@@ -12,9 +14,13 @@
     "typescript": "^5.0.0"
   },
   "scripts": {
-    "dev": "bun run --watch src/index.ts & bun run bun.config.ts",
-    "build": "bun run src/index.ts",
+    "dev": "bun run --watch src/index.tsx & bun run bun.config.ts",
+    "build": "bun run src/index.tsx",
     "deploy": "bun run build; scp -r out/* bolls:/www/linus-bolls-dev/"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  }
 }
