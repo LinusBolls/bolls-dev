@@ -8,3 +8,10 @@ nice to have
 
 - wallpaper texture (like a business card)
 - highlight the ui of the mobile apps more by making them vertical
+
+fixes
+
+- qr code wiggling on contact option hover
+- layout glitch on page load
+- bit of padding on top
+- do "Let's work together ツ" in another font?

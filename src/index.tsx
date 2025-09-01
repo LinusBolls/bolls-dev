@@ -6,6 +6,7 @@ import { renderToString } from "react-dom/server";
 
 import MarkdownIt from "markdown-it";
 
+const BACKGROUND_PATTERN = false;
 const HIGHLIGHT_EFFECT = false;
 
 const markdown = MarkdownIt({
@@ -50,6 +51,7 @@ const ProjectCard: React.FC<{
           alt={title + " project thumbnail"}
           src={imageSrc}
           style={{
+            background: "#0f0f0f",
             width: "100%",
             aspectRatio: 1.6,
             objectFit: "cover",
@@ -60,7 +62,12 @@ const ProjectCard: React.FC<{
       {videoSrc && (
         <canvas
           data-video={videoSrc}
-          style={{ width: "100%", aspectRatio: 1.6, borderRadius: "0.25rem" }}
+          style={{
+            background: "#0f0f0f",
+            width: "100%",
+            aspectRatio: 1.6,
+            borderRadius: "0.25rem",
+          }}
         />
       )}
       <div style={{ padding: "2rem 1.5rem" }}>
@@ -296,145 +303,122 @@ const Site: React.FC = () => {
         <style
           dangerouslySetInnerHTML={{
             __html: `
-
-            h2 {
-              margin: 0;
-              font-size: 2rem;
-              font-weight: bold;
-            }
-
-            [data-project="splid.js"] h2::after {
-            content: " ";
-  
-            background: url(https://img.shields.io/github/stars/LinusBolls/splid-js) no-repeat center;
-
-            margin-left: 1rem;
-
-            width: 82px;
-            height: 20px;
-
-            display: inline-block;
-            }
-
-            
-            .markdown a, a:has(> h2) {
-            color: inherit;
-            text-decoration: underline;
-            }
-                        .markdown a:hover, a:hover:has(> h2) {
-            text-decoration: none;
-            }
-
-            .markdown strong {
-            color: #EF4679;
-            }
-            .markdown p {
-              line-height: 1.3;
-            }
-            
-            *{box-sizing:border-box;}.b:hover{background:#fff;color:#000!important}a.a:hover{color:#fff!important;border-left-width:2px!important;padding-right:0px!important}.a svg{fill:#aaa}a.a:hover svg{fill:#fff}
-        	@media screen and (min-width: 800px) {
-              body {justify-content:center}
-              .b {display:none !important}
-            }
-            @media screen and (max-width: 800px) {
-                body {padding-top:3rem!important}
-                .qr {display:none !important}
-            }
-                body {
-    background-image: url(https://koeni.dev/.netlify/images?url=/images/bg.png);
-    background-color: #f5f0e5;
-    background-size: 80px;
-    background-repeat: repeat;
-    color: #000;
-    font-weight: 600
+h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
+[data-project="splid.js"] h2::after {
+  content: " ";
 
-@supports (animation-timeline: scroll()) {
-  .left-column-parallax {
-    animation: left-column-parallax linear both;
-    animation-timeline: scroll(root);
-    animation-range: 0% 100%;
+  background: url(https://img.shields.io/github/stars/LinusBolls/splid-js)
+    no-repeat center;
+
+  margin-left: 1rem;
+
+  width: 82px;
+  height: 20px;
+
+  display: inline-block;
+}
+
+.markdown a,
+a:has(> h2) {
+  color: inherit;
+  text-decoration: underline;
+}
+.markdown a:hover,
+a:hover:has(> h2) {
+  text-decoration: none;
+}
+
+.markdown strong {
+  color: #ef4679;
+}
+.markdown p {
+  line-height: 1.3;
+}
+
+* {
+  box-sizing: border-box;
+}
+.b:hover {
+  background: #fff;
+  color: #000 !important;
+}
+a.a:hover {
+  color: #fff !important;
+  border-left-width: 2px !important;
+  padding-right: 0px !important;
+}
+.a svg {
+  fill: #aaa;
+}
+a.a:hover svg {
+  fill: #fff;
+}
+@media screen and (min-width: 800px) {
+  body {
+    justify-content: center;
   }
-  
-  @keyframes left-column-parallax {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-24rem); }
+  .b {
+    display: none !important;
   }
-
-    .right-column-parallax {
-    animation: right-column-parallax linear both;
-    animation-timeline: scroll(root);
-    animation-range: 0% 100%;
+}
+@media screen and (max-width: 800px) {
+  body {
+    padding-top: 3rem !important;
   }
-  
-     @keyframes right-column-parallax {
-     0% { transform: translateY(0); }
-     100% { transform: translateY(24rem); }
-   }
+  .qr {
+    display: none !important;
+  }
+}
+html {
+  ${BACKGROUND_PATTERN ? `background-image: url(/background-tile.png);` : ""}
+  background-color: #000;
+  background-size: 60px;
+  background-repeat: repeat;
+  font-weight: 600;
+}
+.left-column-parallax,
+.right-column-parallax {
+  will-change: transform;
+}
 
-   .left-column-parallax .project-card {
-     animation: card-viewport-scale-left linear both;
-     animation-timeline: view();
-     animation-range: entry 20% exit 80%;
-   }
+.project-card {
+  will-change: transform;
+}
 
-      .right-column-parallax .project-card {
-     animation: card-viewport-scale-right linear both;
-     animation-timeline: view();
-     animation-range: entry 20% exit 80%;
-   }
-
-   ${
-     HIGHLIGHT_EFFECT &&
-     `@keyframes card-viewport-scale-left {
-   0% { opacity: 0.1; }
-   20% { opacity: 0.1; }
-   
-   40% { opacity: 1; }
-   50% { opacity: 1; }
-
-   70% { opacity: 0.1; }
-   100% { opacity: 0.1; }
-   }
-        @keyframes card-viewport-scale-right {
-   0% { opacity: 0.1; }
-   20% { opacity: 0.1; }
-   
-   40% { opacity: 1; }
-   50% { opacity: 1; }
-
-   70% { opacity: 0.1; }
-   100% { opacity: 0.1; }
-   }`
-   }
- }
-
- /* Mobile responsive styles */
- @media screen and (max-width: 768px) {
-   .masonry-container {
-     flex-direction: column !important;
-   }
-    .project-card > div {
+@media screen and (max-width: 768px) {
+  .masonry-container {
+    flex-direction: column !important;
+  }
+  .project-card > div {
     padding-left: 0.5rem !important;
     padding-right: 0.5rem !important;
     padding-top: 1rem !important;
     max-width: 32rem;
-    }
-   
-   .left-column-parallax,
-   .right-column-parallax {
-     animation: none !important;
-     transform: none !important;
-   }
-   
-   .left-column-parallax,
-   .right-column-parallax {
-     width: 100% !important;
-   }
- }
-         `,
+  }
+
+  .left-column-parallax,
+  .right-column-parallax {
+    transform: none !important;
+  }
+
+  .left-column-parallax,
+  .right-column-parallax {
+    width: 100% !important;
+  }
+
+  .project-card {
+    transform: none !important;
+  }
+
+  :root {
+    --disable-parallax: 1;
+  }
+}`,
           }}
         />
       </head>
@@ -510,7 +494,63 @@ for (const video of videos) {
       },
     });
   })();
-}`,
+ }`,
+        }}
+      />
+
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+           function initParallax() {
+             const leftColumn = document.querySelector('.left-column-parallax');
+             const rightColumn = document.querySelector('.right-column-parallax');
+             const projectCards = document.querySelectorAll('.project-card');
+             
+             function updateParallax() {
+               const disableParallax = getComputedStyle(document.documentElement)
+                 .getPropertyValue('--disable-parallax').trim() === '1';
+               
+               if (disableParallax) {
+                 if (leftColumn) leftColumn.style.transform = '';
+                 if (rightColumn) rightColumn.style.transform = '';
+                 projectCards.forEach(card => card.style.transform = '');
+                 return;
+               }
+               const scrollY = window.scrollY;
+               const windowHeight = window.innerHeight;
+               const documentHeight = document.documentElement.scrollHeight;
+               const scrollProgress = scrollY / (documentHeight - windowHeight);
+               
+               if (leftColumn) {
+                 const leftY = scrollProgress * -384;
+                 leftColumn.style.transform = \`translateY(\${leftY}px)\`;
+               }
+               
+               if (rightColumn) {
+                 const rightY = scrollProgress * 384;
+                 rightColumn.style.transform = \`translateY(\${rightY}px)\`;
+               }
+             }
+             let ticking = false;
+             function onScroll() {
+               if (!ticking) {
+                 requestAnimationFrame(() => {
+                   updateParallax();
+                   ticking = false;
+                 });
+                 ticking = true;
+               }
+             }
+             updateParallax();
+             window.addEventListener('scroll', onScroll, { passive: true });
+             window.addEventListener('resize', updateParallax, { passive: true });
+           }
+           
+           if (document.readyState === 'loading') {
+             document.addEventListener('DOMContentLoaded', initParallax);
+           } else {
+             initParallax();
+           }`,
         }}
       />
 
@@ -582,10 +622,11 @@ for (const video of videos) {
           display: "flex",
           flexDirection: "column-reverse",
           alignItems: "center",
-          background: "#000",
           color: "#fff",
           fontSize: "1rem",
           fontFamily: "Arial",
+
+          paddingTop: "8rem",
         }}
       >
         <div
@@ -687,7 +728,7 @@ for (const video of videos) {
             alt="Picture of me"
             src={inlineWebp(join(outDir, "avatar.webp"))}
             style={{
-              background: "#0d0d0d",
+              background: "#0f0f0f",
               width: "15rem",
               height: "15rem",
               borderRadius: "50%",
