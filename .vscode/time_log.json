@@ -1,0 +1,3664 @@
+{
+  "bolls-dev-lightning": {
+    "src/index.ts": [
+      {
+        "date": "2025-08-31T08:59:47.643Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 38
+      },
+      {
+        "date": "2025-08-31T08:59:48.188Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T08:59:49.341Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:00:08.218Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 19
+      },
+      {
+        "date": "2025-08-31T09:00:08.451Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T09:00:48.892Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 41
+      },
+      {
+        "date": "2025-08-31T09:08:45.943Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:08:55.243Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:09:07.961Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T09:09:11.135Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:09:23.374Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 8
+      },
+      {
+        "date": "2025-08-31T09:09:32.817Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T09:09:33.116Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T09:09:57.987Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 20
+      },
+      {
+        "date": "2025-08-31T09:09:58.301Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T09:10:14.651Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 12
+      },
+      {
+        "date": "2025-08-31T09:10:21.166Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 7
+      },
+      {
+        "date": "2025-08-31T09:10:22.243Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:10:32.449Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 7
+      },
+      {
+        "date": "2025-08-31T09:10:47.561Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 15
+      },
+      {
+        "date": "2025-08-31T09:10:48.143Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:10:53.444Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:11:01.138Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 5
+      },
+      {
+        "date": "2025-08-31T09:11:08.924Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T09:11:17.616Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 5
+      },
+      {
+        "date": "2025-08-31T09:11:21.264Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T09:11:39.017Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T09:11:40.626Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:11:50.247Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 10
+      },
+      {
+        "date": "2025-08-31T09:12:05.685Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 15
+      },
+      {
+        "date": "2025-08-31T09:12:06.748Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:12:30.125Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 23
+      },
+      {
+        "date": "2025-08-31T09:13:19.129Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 49
+      },
+      {
+        "date": "2025-08-31T09:13:19.403Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T09:13:25.785Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T09:13:47.569Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 22
+      },
+      {
+        "date": "2025-08-31T09:13:47.994Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T09:14:34.732Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 47
+      },
+      {
+        "date": "2025-08-31T09:14:49.426Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 15
+      },
+      {
+        "date": "2025-08-31T09:14:51.280Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:14:54.279Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:14:59.047Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 5
+      },
+      {
+        "date": "2025-08-31T09:15:00.152Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:15:44.224Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 44
+      },
+      {
+        "date": "2025-08-31T09:29:36.765Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 833
+      },
+      {
+        "date": "2025-08-31T09:29:38.484Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:29:38.707Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T09:29:40.874Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:29:41.109Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T09:29:50.978Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 10
+      },
+      {
+        "date": "2025-08-31T09:29:51.273Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T09:29:57.846Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 7
+      },
+      {
+        "date": "2025-08-31T09:29:58.090Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T09:30:09.624Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 12
+      },
+      {
+        "date": "2025-08-31T09:30:09.789Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T09:30:15.168Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 5
+      },
+      {
+        "date": "2025-08-31T09:30:15.415Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T09:30:19.636Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T09:30:20.513Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:30:26.237Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T09:30:26.446Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T09:31:11.974Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 46
+      },
+      {
+        "date": "2025-08-31T09:31:58.481Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 46
+      },
+      {
+        "date": "2025-08-31T09:32:06.582Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 8
+      },
+      {
+        "date": "2025-08-31T09:32:08.012Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:32:40.364Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 32
+      },
+      {
+        "date": "2025-08-31T09:32:53.226Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 13
+      },
+      {
+        "date": "2025-08-31T09:32:54.857Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:32:55.740Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:32:58.103Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:33:00.511Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:33:16.685Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 16
+      },
+      {
+        "date": "2025-08-31T09:33:17.205Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T09:33:18.048Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:33:18.312Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T09:33:25.318Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 7
+      },
+      {
+        "date": "2025-08-31T09:33:35.147Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 10
+      },
+      {
+        "date": "2025-08-31T09:33:35.419Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T09:33:39.434Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T09:33:39.718Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T09:33:47.927Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 8
+      },
+      {
+        "date": "2025-08-31T09:33:50.875Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:33:52.787Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:33:55.457Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:33:56.954Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:34:27.316Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 30
+      },
+      {
+        "date": "2025-08-31T09:34:27.635Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T09:34:33.818Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T09:34:47.700Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 14
+      },
+      {
+        "date": "2025-08-31T09:35:29.609Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 42
+      },
+      {
+        "date": "2025-08-31T09:36:39.122Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 69
+      },
+      {
+        "date": "2025-08-31T09:39:22.552Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:39:22.858Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T09:40:39.539Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:40:56.942Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 17
+      },
+      {
+        "date": "2025-08-31T09:40:59.653Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:41:00.053Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T09:41:02.276Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:41:10.426Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 8
+      },
+      {
+        "date": "2025-08-31T09:41:19.763Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 9
+      },
+      {
+        "date": "2025-08-31T09:41:20.010Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T09:48:52.051Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 11
+      },
+      {
+        "date": "2025-08-31T09:48:52.315Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T09:48:53.749Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:49:03.323Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 10
+      },
+      {
+        "date": "2025-08-31T09:49:03.545Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T10:28:03.389Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T10:28:14.633Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:28:14.889Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T10:29:10.991Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 56
+      },
+      {
+        "date": "2025-08-31T10:36:16.957Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T10:36:22.007Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:36:54.460Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:36:54.724Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T10:37:00.702Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T10:37:18.292Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 18
+      },
+      {
+        "date": "2025-08-31T10:37:21.558Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:37:26.289Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 5
+      },
+      {
+        "date": "2025-08-31T10:37:28.297Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T10:37:28.640Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T10:37:28.978Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T10:37:37.667Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 9
+      },
+      {
+        "date": "2025-08-31T10:37:46.596Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 9
+      },
+      {
+        "date": "2025-08-31T10:37:50.921Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:37:51.142Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T10:38:04.254Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 13
+      },
+      {
+        "date": "2025-08-31T10:38:06.763Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:38:07.113Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T10:38:26.633Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 20
+      },
+      {
+        "date": "2025-08-31T10:38:32.330Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T10:38:39.446Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 7
+      },
+      {
+        "date": "2025-08-31T10:38:42.126Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:38:44.995Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:38:46.295Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T10:38:48.092Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T10:38:50.507Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T10:38:53.450Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:38:56.810Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:38:59.732Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:39:03.529Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:39:12.460Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 9
+      },
+      {
+        "date": "2025-08-31T10:39:12.760Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T10:39:54.321Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 42
+      },
+      {
+        "date": "2025-09-01T09:45:47.402Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-09-01T09:45:47.412Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-09-01T10:00:37.985Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      }
+    ],
+    "src/index.ts.git": [
+      {
+        "date": "2025-08-31T09:00:58.077Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T09:01:25.388Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 27
+      },
+      {
+        "date": "2025-08-31T09:01:35.206Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 10
+      },
+      {
+        "date": "2025-08-31T09:01:39.891Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 5
+      },
+      {
+        "date": "2025-08-31T09:02:01.263Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 21
+      },
+      {
+        "date": "2025-08-31T09:02:03.368Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:02:07.272Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T09:02:08.201Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:02:11.770Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T09:02:15.127Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:02:23.946Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 9
+      },
+      {
+        "date": "2025-08-31T09:02:25.509Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:02:26.967Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:02:30.857Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T09:02:33.262Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:02:34.850Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:02:37.322Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:02:39.000Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:02:40.922Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:03:00.787Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 20
+      },
+      {
+        "date": "2025-08-31T09:03:37.242Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 36
+      },
+      {
+        "date": "2025-08-31T09:03:40.481Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:04:03.790Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 23
+      },
+      {
+        "date": "2025-08-31T09:04:06.234Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:04:16.889Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 11
+      },
+      {
+        "date": "2025-08-31T09:04:31.684Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 15
+      },
+      {
+        "date": "2025-08-31T09:04:47.432Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 16
+      },
+      {
+        "date": "2025-08-31T09:04:48.754Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:04:57.454Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 9
+      },
+      {
+        "date": "2025-08-31T09:05:04.124Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 7
+      },
+      {
+        "date": "2025-08-31T09:05:21.605Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 17
+      },
+      {
+        "date": "2025-08-31T09:05:28.097Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 7
+      },
+      {
+        "date": "2025-08-31T09:05:32.531Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T09:05:34.864Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:05:46.515Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 12
+      },
+      {
+        "date": "2025-08-31T09:06:03.760Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 17
+      },
+      {
+        "date": "2025-08-31T09:06:07.535Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T09:06:10.701Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:06:12.054Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:06:18.107Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T09:06:20.219Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:06:25.998Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T09:06:32.094Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T09:06:39.060Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 7
+      },
+      {
+        "date": "2025-08-31T09:06:44.882Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T09:06:47.708Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:06:50.880Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:06:52.082Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:07:07.286Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 15
+      },
+      {
+        "date": "2025-08-31T09:07:25.998Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 19
+      },
+      {
+        "date": "2025-08-31T09:07:36.943Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 11
+      },
+      {
+        "date": "2025-08-31T09:07:58.647Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 22
+      },
+      {
+        "date": "2025-08-31T09:07:59.733Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:08:21.329Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 22
+      },
+      {
+        "date": "2025-08-31T09:11:27.023Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:38:27.189Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 11
+      },
+      {
+        "date": "2025-08-31T09:38:40.269Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 13
+      },
+      {
+        "date": "2025-08-31T09:38:41.409Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:38:51.016Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 10
+      },
+      {
+        "date": "2025-08-31T09:39:09.732Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 19
+      },
+      {
+        "date": "2025-08-31T09:42:28.904Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T09:42:32.304Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:42:36.431Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T09:43:23.872Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 47
+      },
+      {
+        "date": "2025-08-31T09:43:25.370Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:44:41.605Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 76
+      },
+      {
+        "date": "2025-08-31T09:44:47.250Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T09:45:21.471Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 34
+      },
+      {
+        "date": "2025-08-31T09:45:23.513Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:46:20.565Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 57
+      },
+      {
+        "date": "2025-08-31T09:47:46.307Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 7
+      },
+      {
+        "date": "2025-08-31T09:47:56.156Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 10
+      },
+      {
+        "date": "2025-08-31T09:47:57.557Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:48:08.213Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 11
+      },
+      {
+        "date": "2025-08-31T09:51:44.500Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T09:51:45.809Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:51:51.880Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T09:51:52.881Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:51:58.364Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 5
+      },
+      {
+        "date": "2025-08-31T09:52:04.386Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T09:52:05.648Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:52:21.396Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 16
+      },
+      {
+        "date": "2025-08-31T09:52:22.369Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:52:25.539Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:52:29.323Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T09:52:45.992Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 17
+      },
+      {
+        "date": "2025-08-31T09:52:48.485Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:52:51.432Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:52:52.074Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:52:54.335Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:52:57.769Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:52:58.985Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:53:03.437Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T09:53:10.234Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 7
+      },
+      {
+        "date": "2025-08-31T09:53:13.023Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:53:44.150Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 31
+      },
+      {
+        "date": "2025-08-31T09:53:50.630Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 7
+      },
+      {
+        "date": "2025-08-31T09:53:58.851Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 8
+      },
+      {
+        "date": "2025-08-31T09:54:06.618Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 8
+      },
+      {
+        "date": "2025-08-31T09:54:15.951Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 9
+      },
+      {
+        "date": "2025-08-31T09:54:16.872Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:54:20.949Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T09:54:29.149Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 8
+      },
+      {
+        "date": "2025-08-31T09:54:53.883Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 25
+      },
+      {
+        "date": "2025-08-31T09:54:59.269Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 5
+      },
+      {
+        "date": "2025-08-31T09:55:00.203Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:55:10.115Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 10
+      },
+      {
+        "date": "2025-08-31T09:55:11.231Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:55:14.571Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:55:15.449Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:55:30.355Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 15
+      },
+      {
+        "date": "2025-08-31T09:55:38.214Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 8
+      },
+      {
+        "date": "2025-08-31T09:55:39.586Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:55:54.315Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 15
+      },
+      {
+        "date": "2025-08-31T09:55:55.411Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:55:57.965Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:55:58.773Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:56:04.251Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 5
+      },
+      {
+        "date": "2025-08-31T09:56:05.897Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:56:22.424Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 16
+      },
+      {
+        "date": "2025-08-31T09:56:23.938Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:56:29.616Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T09:56:31.560Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:56:34.831Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:56:37.172Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:56:40.685Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:56:44.922Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T09:56:45.617Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:56:47.914Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:56:54.302Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T09:56:56.860Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:56:57.696Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:56:58.624Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:57:00.523Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:57:38.691Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 38
+      },
+      {
+        "date": "2025-08-31T09:57:39.969Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:57:49.097Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 9
+      },
+      {
+        "date": "2025-08-31T09:57:51.982Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T09:57:57.886Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T09:58:01.902Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T09:58:13.794Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 12
+      },
+      {
+        "date": "2025-08-31T09:58:15.606Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T09:58:27.840Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 12
+      },
+      {
+        "date": "2025-08-31T09:58:45.639Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 18
+      },
+      {
+        "date": "2025-08-31T09:58:46.286Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:59:23.446Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 37
+      },
+      {
+        "date": "2025-08-31T09:59:55.824Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 32
+      },
+      {
+        "date": "2025-08-31T09:59:57.140Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:59:58.179Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T10:00:04.778Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 7
+      },
+      {
+        "date": "2025-08-31T10:00:08.622Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:00:27.374Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 19
+      },
+      {
+        "date": "2025-08-31T10:00:39.566Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 12
+      },
+      {
+        "date": "2025-08-31T10:01:07.564Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 28
+      },
+      {
+        "date": "2025-08-31T10:01:10.050Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T10:01:27.810Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 18
+      },
+      {
+        "date": "2025-08-31T10:01:31.676Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:01:37.248Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T10:01:42.878Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T10:01:50.682Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 8
+      },
+      {
+        "date": "2025-08-31T10:02:10.082Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 19
+      },
+      {
+        "date": "2025-08-31T10:02:24.100Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 14
+      },
+      {
+        "date": "2025-08-31T10:02:25.010Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T10:02:34.225Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 9
+      },
+      {
+        "date": "2025-08-31T10:02:38.470Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:02:42.291Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:02:44.885Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:02:51.688Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 7
+      },
+      {
+        "date": "2025-08-31T10:02:56.074Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:03:06.544Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 10
+      },
+      {
+        "date": "2025-08-31T10:03:09.818Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:03:10.845Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T10:03:23.002Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 12
+      },
+      {
+        "date": "2025-08-31T10:04:05.194Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 8
+      },
+      {
+        "date": "2025-08-31T10:04:08.329Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:04:13.508Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 5
+      },
+      {
+        "date": "2025-08-31T10:04:17.466Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:04:18.735Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T10:04:21.952Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:04:23.539Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T10:04:27.020Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:04:32.940Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T10:04:33.805Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T10:04:34.845Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T10:04:35.554Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T10:04:44.460Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 9
+      },
+      {
+        "date": "2025-08-31T10:04:46.107Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T10:04:50.413Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:04:54.179Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:04:57.126Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:04:57.823Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T10:05:06.905Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 9
+      },
+      {
+        "date": "2025-08-31T10:05:07.668Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T10:05:10.014Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T10:05:23.801Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 14
+      },
+      {
+        "date": "2025-08-31T10:05:25.169Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T10:05:29.551Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:05:33.055Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:05:38.981Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T10:05:41.768Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:06:03.456Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 22
+      },
+      {
+        "date": "2025-08-31T10:06:04.407Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T10:06:09.850Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 5
+      },
+      {
+        "date": "2025-08-31T10:06:12.460Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:06:13.376Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T10:06:14.648Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T10:06:16.557Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T10:06:22.125Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T10:06:23.166Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T10:06:29.339Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T10:06:37.142Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 8
+      },
+      {
+        "date": "2025-08-31T10:06:44.566Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 7
+      },
+      {
+        "date": "2025-08-31T10:06:53.249Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 9
+      },
+      {
+        "date": "2025-08-31T10:06:55.249Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T10:06:59.221Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:07:03.444Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:07:04.972Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T10:07:12.343Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 7
+      },
+      {
+        "date": "2025-08-31T10:07:17.330Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 5
+      },
+      {
+        "date": "2025-08-31T10:07:20.230Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:07:28.420Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 8
+      },
+      {
+        "date": "2025-08-31T10:07:30.037Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T10:07:50.306Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 20
+      },
+      {
+        "date": "2025-08-31T10:07:51.672Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T10:07:56.956Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 5
+      },
+      {
+        "date": "2025-08-31T10:08:13.248Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 16
+      },
+      {
+        "date": "2025-08-31T10:08:23.326Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 10
+      },
+      {
+        "date": "2025-08-31T10:08:25.504Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T10:08:50.400Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 25
+      },
+      {
+        "date": "2025-08-31T10:09:04.097Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 14
+      },
+      {
+        "date": "2025-08-31T10:09:36.462Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 32
+      },
+      {
+        "date": "2025-08-31T10:10:19.819Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 43
+      },
+      {
+        "date": "2025-08-31T10:11:34.796Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 75
+      },
+      {
+        "date": "2025-08-31T10:11:41.105Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T10:11:52.860Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 12
+      },
+      {
+        "date": "2025-08-31T10:12:00.842Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 8
+      },
+      {
+        "date": "2025-08-31T10:12:25.974Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 25
+      },
+      {
+        "date": "2025-08-31T10:12:29.213Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:12:34.797Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T10:12:49.060Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 14
+      },
+      {
+        "date": "2025-08-31T10:12:52.663Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:12:55.751Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:12:57.207Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T10:13:03.982Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 7
+      },
+      {
+        "date": "2025-08-31T10:13:08.619Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 5
+      },
+      {
+        "date": "2025-08-31T10:13:12.931Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:13:15.133Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T10:13:18.326Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:13:22.110Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:13:28.469Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 6
+      },
+      {
+        "date": "2025-08-31T10:13:32.593Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:13:37.167Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 5
+      },
+      {
+        "date": "2025-08-31T10:14:11.524Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 34
+      },
+      {
+        "date": "2025-08-31T10:14:14.409Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:14:16.962Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:14:18.312Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T10:14:22.544Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:14:25.817Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:14:33.038Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 7
+      },
+      {
+        "date": "2025-08-31T10:14:51.469Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 18
+      },
+      {
+        "date": "2025-08-31T10:16:03.697Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 72
+      },
+      {
+        "date": "2025-08-31T10:16:06.060Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T10:16:14.992Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 9
+      },
+      {
+        "date": "2025-08-31T10:16:23.379Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 8
+      },
+      {
+        "date": "2025-08-31T10:16:25.023Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T10:16:25.739Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T10:16:29.955Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:17:12.216Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 42
+      },
+      {
+        "date": "2025-08-31T10:17:26.620Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 14
+      },
+      {
+        "date": "2025-08-31T10:17:49.938Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 23
+      },
+      {
+        "date": "2025-08-31T10:17:58.215Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 8
+      },
+      {
+        "date": "2025-08-31T10:18:17.703Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 19
+      },
+      {
+        "date": "2025-08-31T10:18:22.223Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:18:23.352Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T10:18:26.646Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:18:29.849Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:18:46.153Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 16
+      },
+      {
+        "date": "2025-08-31T10:19:06.259Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 20
+      },
+      {
+        "date": "2025-08-31T10:19:11.297Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 5
+      },
+      {
+        "date": "2025-08-31T10:19:17.932Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 7
+      },
+      {
+        "date": "2025-08-31T10:19:22.323Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-08-31T10:19:25.168Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:19:28.570Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 3
+      },
+      {
+        "date": "2025-08-31T10:19:31.031Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T10:19:41.488Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 10
+      },
+      {
+        "date": "2025-08-31T10:20:34.376Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 53
+      },
+      {
+        "date": "2025-08-31T10:20:46.759Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 12
+      },
+      {
+        "date": "2025-08-31T10:20:48.885Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 2
+      },
+      {
+        "date": "2025-08-31T10:20:49.741Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T10:21:28.188Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 38
+      },
+      {
+        "date": "2025-08-31T10:22:26.693Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 58
+      },
+      {
+        "date": "2025-08-31T10:22:52.487Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 5
+      },
+      {
+        "date": "2025-08-31T10:22:53.899Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T10:23:08.039Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 14
+      },
+      {
+        "date": "2025-08-31T10:23:51.666Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 44
+      },
+      {
+        "date": "2025-08-31T10:26:51.655Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 5
+      },
+      {
+        "date": "2025-08-31T10:52:16.530Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-09-01T09:45:15.176Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-09-01T09:45:16.161Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-09-01T09:45:19.828Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      },
+      {
+        "date": "2025-09-01T09:45:23.502Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 4
+      }
+    ],
+    "node_modules/@types/qrcode/index.d.ts": [
+      {
+        "date": "2025-08-31T09:48:11.577Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      }
+    ],
+    "node_modules/@types/node/globals.d.ts": [
+      {
+        "date": "2025-08-31T09:48:11.626Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T09:48:11.637Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T09:48:12.546Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 1
+      },
+      {
+        "date": "2025-08-31T09:48:32.329Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 20
+      }
+    ],
+    "content.md": [
+      {
+        "date": "2025-08-31T13:12:28.891Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      },
+      {
+        "date": "2025-08-31T13:12:28.900Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 0
+      }
+    ],
+    "package.json": [
+      {
+        "date": "2025-09-01T09:43:31.633Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 35
+      },
+      {
+        "date": "2025-09-01T09:44:24.491Z",
+        "user": {
+          "name": "Linus Bolls",
+          "email": "linus.bolls@gmail.com"
+        },
+        "timeSpent": 54
+      }
+    ]
+  }
+}

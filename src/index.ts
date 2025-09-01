@@ -127,6 +127,82 @@ const sharedHead = `
         )}">
 `;
 
+const projects = [
+  {
+    image: "medtime-thumbnail.png",
+    title: "MedTime",
+    url: "https://vettime.de",
+    description: `I'm currently building a time-tracking solution for veterinarians, and we already have around a dozen b2b customers.
+    When I joined my three co-founders, I took over their prototype, which was vibe coded using Replit - I'm all for vibe coding and quick validation, just *please* don't use Replit 🙃`,
+  },
+  {
+    image: "zentio-thumbnail.webp",
+    title: "Zentio",
+    url: "https://zentio.io",
+    description: `During 2025, I did freelance fullstack development for Zentio during their pre-seed stage. They didn't have a dedicated designer to create high-fidelity designs, so I was given a lot of ownership in UI and UX questions. I mainly worked with React, tRPC, and Drizzle ORM.`,
+  },
+  {
+    image: "flamingo-thumbnail.png",
+    title: "Flamingo",
+    description: `For 1.5 years, my cofounder and I worked on Flamingo, a browser extension that added poweruser features like inboxes and text templates to the LinkedIn messenger. We created a whole new messenger ui which overlayed over LinkedIn.
+I reverse engineered the API
+In the end, the project failed because of the overly ambitious scope, and because we didn't properly validate the project - people just weren't willing to pay for it.
+I spent a lot of time reverse-engineering the LinkedIn API, so hit me up for any LinkedIn specific work.`,
+  },
+  {
+    image: "study-planner-thumbnail.png",
+    title: "CODE Study Planner",
+    url: "https://planner.project.code.berlin",
+    description: `As a student, I wanted to give back to the CODE University community with a tool for students to plan their studies.
+Uses the GraphQL API of the internal CODE intranet called the <i>Learning Platform</i>. to puzzle everything together from a billion endpoints.
+I used the Ant Design component library to keep the same visual style as the <i>Learning Platform</i>.`,
+  },
+  {
+    image: "versus-thumbnail.png",
+    title: "Versus",
+    url: "",
+    description: `As a side project for my friends, I'm building a mobile app where you can create leaderboards for any sport, be it chess or table kicker.
+Started out for beerpong.
+It's currently in beta testing with my friend group, and I'm planning to release it on the app store soon.
+React Native
+The backend is mostly maintained by a friend and is written in spring boot. Java has a bit of an antiquated reputation in the startup scene, but I have to say that I'm really enjoy it for its more opinionated thing.`,
+  },
+  {
+    image: "splid-js-thumbnail.png",
+    title: "splid.js",
+    url: "",
+    description: `[Splid](https://splid.app) is a free mobile app for sharing expenses, which I use a lot with friends. When I got annoyed that it didn't have a web client, I built one. In the process, I created a feature-complete SDK for the Splid API, which seems to be used by a few other people as well.`,
+  },
+  {
+    image: "code-connect-thumbnail.png",
+    title: "CODE Connect",
+    url: "",
+    description: `For [Slash hackathon 2023](https://slash.berlin), I built and published an iOS app that allows students to book rooms using the Google Calendar API.
+First time using React Native`,
+  },
+  {
+    image: "casablanca-thumbnail.png",
+    title: "Casablanca AI",
+    url: "https://casablanca.ai",
+    description: `In 2024 I freelanced for Casablanca, where I built features that integrated their no-code Webflow landing page with their API. I *hate* working with custom code in Webflow, and will never do it again.`,
+  },
+  {
+    image: "evil-twitter-thumbnail.png",
+    title: "Evil Twitter",
+    url: "",
+    description: `I don't use the darknet a lot, but I'm fascinated by its unique engineering challenges. Darknet sites are built to work with the highest security setting of the Tor Browser, which disables JavaScript, Svgs, Fonts, and more.
+I'm not planning to publically deploy this, it's more of an engineering challenge for myself.
+Pioneered some 
+Working on a transpiler for making state management using CSS more user friendly`,
+  },
+  {
+    image: "spaceprogram-thumbnail.webp",
+    title: "Landable Rocket",
+    url: "https://spaceprogram.bolls.dev",
+    description: `During the summer of 2025, me and two other CODE students built a self-landing rocket from scratch over the course of five weeks. For the flight software running on a ESP-32 chip, we quickly switched from the beginner-friendly Arduino to the more professional ESP-IDF framework. I designed and 3D-printed over a dozen distinct mechanical parts.`,
+  },
+];
+
 async function site() {
   return `<!DOCTYPE html>
 <html lang="en">
@@ -152,8 +228,29 @@ async function site() {
                 body {padding-top:3rem!important}
                 .qr {display:none !important}
             }
+                body {
+    background-image: url(https://koeni.dev/.netlify/images?url=/images/bg.png);
+    background-color: #f5f0e5;
+    background-size: 80px;
+    background-repeat: repeat;
+    color: #000;
+    font-weight: 600
+}
         </style>
     </head>
+    <div style="display:grid;grid-template-columns: 1fr 1fr;gap:1rem; max-width: 72rem; margin: auto;grid-template-rows: masonry;">
+      ${projects
+        .map(
+          (project) => `<div style="display:flex;flex-direction:column">
+        <img src="${project.image}" style="width: 100%; aspect-ratio: 1.6; object-fit: cover">
+        <div style="padding: 2rem 1.5rem">
+          <h2 style="margin: 0; font-size: 2rem; font-weight: bold">${project.title}</h2>
+          <p style="margin: 0; margin-top: 1rem; font-weight: normal">${project.description}</p>
+        </div>
+      </div>`
+        )
+        .join("")}
+    </div>
     <body style="margin:0;padding:0;min-height:100vh;display:flex;flex-direction:column-reverse;align-items:center;background: #000; color: #fff; font-size: 1rem; font-family: Arial">
         <div style="display:flex;flex-direction:column;width:100%;max-width:32rem;padding:0 1rem 5rem 1rem">
             <div style="display:flex; gap: 1rem">
@@ -235,3 +332,5 @@ async function resizeToSquare(
     })
     .toFile(outputPath);
 }
+
+await fs.promises.cp(assetsDir, outDir, { recursive: true });
