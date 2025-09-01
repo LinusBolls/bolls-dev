@@ -23,3 +23,7 @@ Call it "My Work" instead of "Projects"
 
 - fix the favicon
 - fine-tune scroll animation
+
+## resize command
+
+- for f in \*.webp; do cwebp -q 90 -resize 1704 1065 "$f" -o "${f%.webp}.resized.webp"; done

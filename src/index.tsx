@@ -4,6 +4,21 @@ import { join } from "path";
 import React from "react";
 import { renderToString } from "react-dom/server";
 
+import MarkdownIt from "markdown-it";
+
+const markdown = MarkdownIt({
+  html: true,
+});
+
+markdown.renderer.rules.link_open = function (tokens, idx, options, env, self) {
+  const token = tokens[idx];
+
+  token.attrSet("target", "_blank");
+  token.attrSet("rel", "noopener");
+
+  return self.renderToken(tokens, idx, options);
+};
+
 import nodeHtmlToImage from "node-html-to-image";
 import QRCode from "qrcode";
 import sharp from "sharp";
@@ -32,9 +47,11 @@ const ProjectCard: React.FC<{
         <h2 style={{ margin: 0, fontSize: "2rem", fontWeight: "bold" }}>
           {title}
         </h2>
-        <p style={{ margin: 0, marginTop: "1rem", fontWeight: "normal" }}>
-          {description}
-        </p>
+        <div
+          className="markdown"
+          style={{ margin: 0, marginTop: "1rem", fontWeight: "normal" }}
+          dangerouslySetInnerHTML={{ __html: markdown.render(description) }}
+        />
       </div>
     </div>
   );
@@ -147,20 +164,20 @@ const addContactQrCodeSvg = await QRCode.toString(vcardDataUri, {
 
 const projects = [
   {
-    imageSrc: "medtime-thumbnail.png",
+    imageSrc: "medtime-thumbnail.resized.webp",
     title: "MedTime",
     url: "https://vettime.de",
     description: `I'm currently building a time-tracking solution for veterinarians, and we already have around a dozen b2b customers.
     When I joined my three co-founders, I took over their prototype, which was vibe coded using Replit - I'm all for vibe coding and quick validation, just *please* don't use Replit 🙃`,
   },
   {
-    imageSrc: "zentio-thumbnail.webp",
+    imageSrc: "zentio-thumbnail.resized.webp",
     title: "Zentio",
     url: "https://zentio.io",
     description: `During 2025, I did freelance fullstack development for Zentio during their pre-seed stage. They didn't have a dedicated designer to create high-fidelity designs, so I was given a lot of ownership in UI and UX questions. I mainly worked with React, tRPC, and Drizzle ORM.`,
   },
   {
-    imageSrc: "flamingo-thumbnail.png",
+    imageSrc: "flamingo-thumbnail.resized.webp",
     title: "Flamingo",
     description: `For 1.5 years, my cofounder and I worked on Flamingo, a browser extension that added poweruser features like inboxes and text templates to the LinkedIn messenger. We created a whole new messenger ui which overlayed over LinkedIn.
 I reverse engineered the API
@@ -168,7 +185,7 @@ In the end, the project failed because of the overly ambitious scope, and becaus
 I spent a lot of time reverse-engineering the LinkedIn API, so hit me up for any LinkedIn specific work.`,
   },
   {
-    imageSrc: "study-planner-thumbnail.png",
+    imageSrc: "study-planner-thumbnail.resized.webp",
     title: "CODE Study Planner",
     url: "https://planner.project.code.berlin",
     description: `As a student, I wanted to give back to the CODE University community with a tool for students to plan their studies.
@@ -176,7 +193,7 @@ Uses the GraphQL API of the internal CODE intranet called the <i>Learning Platfo
 I used the Ant Design component library to keep the same visual style as the <i>Learning Platform</i>.`,
   },
   {
-    imageSrc: "versus-thumbnail.png",
+    imageSrc: "versus-thumbnail.resized.webp",
     title: "Versus",
     url: "",
     description: `As a side project for my friends, I'm building a mobile app where you can create leaderboards for any sport, be it chess or table kicker.
@@ -186,26 +203,26 @@ React Native
 The backend is mostly maintained by a friend and is written in spring boot. Java has a bit of an antiquated reputation in the startup scene, but I have to say that I'm really enjoy it for its more opinionated thing.`,
   },
   {
-    imageSrc: "splid-js-thumbnail.png",
+    imageSrc: "splid-js-thumbnail.resized.webp",
     title: "splid.js",
     url: "",
-    description: `[Splid](https://splid.app) is a free mobile app for sharing expenses, which I use a lot with friends. When I got annoyed that it didn't have a web client, I built one. In the process, I created a feature-complete SDK for the Splid API, which seems to be used by a few other people as well.`,
+    description: `[Splid](https://splid.app/english) is a free mobile app for sharing expenses, which I use a lot with friends. When I got annoyed that it didn't have a web client, I built one. In the process, I created a feature-complete SDK for the Splid API, which seems to be used by a few other people as well.`,
   },
   {
-    imageSrc: "code-connect-thumbnail.png",
+    imageSrc: "code-connect-thumbnail.resized.webp",
     title: "CODE Connect",
     url: "",
     description: `For [Slash hackathon 2023](https://slash.berlin), I built and published an iOS app that allows students to book rooms using the Google Calendar API.
 First time using React Native`,
   },
   {
-    imageSrc: "casablanca-thumbnail.png",
+    imageSrc: "casablanca-thumbnail.resized.webp",
     title: "Casablanca AI",
     url: "https://casablanca.ai",
     description: `In 2024 I freelanced for Casablanca, where I built features that integrated their no-code Webflow landing page with their API. I *hate* working with custom code in Webflow, and will never do it again.`,
   },
   {
-    imageSrc: "evil-twitter-thumbnail.png",
+    imageSrc: "evil-twitter-thumbnail.resized.webp",
     title: "Evil Twitter",
     url: "",
     description: `I don't use the darknet a lot, but I'm fascinated by its unique engineering challenges. Darknet sites are built to work with the highest security setting of the Tor Browser, which disables JavaScript, Svgs, Fonts, and more.
@@ -214,7 +231,7 @@ Pioneered some
 Working on a transpiler for making state management using CSS more user friendly`,
   },
   {
-    imageSrc: "spaceprogram-thumbnail.webp",
+    imageSrc: "spaceprogram-thumbnail.resized.webp",
     title: "Landable Rocket",
     url: "https://spaceprogram.bolls.dev",
     description: `During the summer of 2025, me and two other CODE students built a self-landing rocket from scratch over the course of five weeks. For the flight software running on a ESP-32 chip, we quickly switched from the beginner-friendly Arduino to the more professional ESP-IDF framework. I designed and 3D-printed over a dozen distinct mechanical parts.`,
@@ -250,7 +267,16 @@ const Site: React.FC = () => {
         />
         <style
           dangerouslySetInnerHTML={{
-            __html: `*{box-sizing:border-box;}.b:hover{background:#fff;color:#000!important}a.a:hover{color:#fff!important;border-left-width:2px!important;padding-right:0px!important}.a svg{fill:#aaa}a.a:hover svg{fill:#fff}
+            __html: `
+            .markdown a {
+            color: inherit;
+            text-decoration: underline;
+            }
+                        .markdown a:hover {
+            text-decoration: none;
+            }
+            
+            *{box-sizing:border-box;}.b:hover{background:#fff;color:#000!important}a.a:hover{color:#fff!important;border-left-width:2px!important;padding-right:0px!important}.a svg{fill:#aaa}a.a:hover svg{fill:#fff}
         	@media screen and (min-width: 800px) {
               body {justify-content:center}
               .b {display:none !important}
