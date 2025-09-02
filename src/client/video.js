@@ -4,14 +4,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const videos = [
   {
-    id: "casablanca-thumbnail",
-    numFrames: 117,
-  },
-  {
-    id: "study-planner-thumbnail",
-    numFrames: 149,
-  },
-  {
     id: "medtime-thumbnail",
     numFrames: 318,
   },
@@ -20,12 +12,25 @@ const videos = [
     numFrames: 552,
   },
   {
+    id: "study-planner-thumbnail",
+    numFrames: 149,
+  },
+  {
+    id: "casablanca-thumbnail",
+    numFrames: 117,
+  },
+  {
     id: "spaceprogram-thumbnail",
     numFrames: 82,
   },
 ];
 
-const DPR = Math.min(window.devicePixelRatio || 1, 2); // cap DPR to limit VRAM
+const MAX_PIXELS = 4_000_000; // ~4MP/frame budget; adjust to 6–8MP if safe
+function computeDPR(rect) {
+  const dpr = window.devicePixelRatio || 1;
+  const cap = Math.sqrt(MAX_PIXELS / (rect.width * rect.height));
+  return Math.max(1, Math.min(dpr, cap || 1, 3)); // hard-cap at 3x
+}
 const CACHE_LIMIT = 30; // keep ~30 frames max in memory
 const PREFETCH_AHEAD = 12; // window size ahead/behind
 const CONCURRENCY = 4; // cap concurrent fetch/decodes
@@ -37,11 +42,12 @@ for (const video of videos) {
   // Set canvas once based on its CSS size
   function sizeCanvas() {
     const rect = canvas.getBoundingClientRect();
+    const DPR = computeDPR(rect);
     canvas.width = Math.round(rect.width * DPR);
     canvas.height = Math.round(rect.height * DPR);
-    ctx.setTransform(DPR, 0, 0, DPR, 0, 0); // draw in CSS pixels
-    ctx.imageSmoothingEnabled = true;
-    ctx.imageSmoothingQuality = "high";
+    // draw in device pixels; no scaling transform
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.imageSmoothingEnabled = false; // 1:1 → crisp
   }
   sizeCanvas();
   addEventListener("resize", sizeCanvas, { passive: true });
@@ -96,13 +102,14 @@ for (const video of videos) {
     const blob = await res.blob();
 
     // Try ImageBitmap with resize to canvas size for lower memory
-    const targetW = Math.max(1, canvas.width / DPR);
-    const targetH = Math.max(1, canvas.height / DPR);
+    const targetW = canvas.width;
+    const targetH = canvas.height;
     let bmp;
     try {
       bmp = await createImageBitmap(blob, {
         resizeWidth: targetW,
         resizeHeight: targetH,
+        // resizeQuality: "high", // optional; Safari may ignore
       });
       touch(i, bmp);
     } catch {
@@ -123,8 +130,7 @@ for (const video of videos) {
     const frame = cache.get(i);
     if (!frame) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    // Draw using CSS pixel coords thanks to setTransform
-    ctx.drawImage(frame, 0, 0, canvas.clientWidth, canvas.clientHeight);
+    ctx.drawImage(frame, 0, 0, canvas.width, canvas.height); // 1:1 in device px
   }
 
   // Kick off first frame quickly
