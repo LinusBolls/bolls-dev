@@ -141,12 +141,14 @@ for (const video of videos) {
   // Kick off first frame quickly
   enqueue(() => decodeFrame(1)).then(() => draw(1));
 
+  const isRocket = video.id === "spaceprogram-thumbnail";
+
   // Scroll-driven playback with lazy loading + prefetch window
   const state = { i: 1 };
   ScrollTrigger.create({
     trigger: canvas,
-    start: "bottom bottom",
-    end: "+=1000",
+    start: isRocket ? "bottom bottom-=20" : "top bottom",
+    end: isRocket ? "bottom top-=130" : "bottom top",
     pin: false,
     scrub: true,
     onUpdate: (self) => {
