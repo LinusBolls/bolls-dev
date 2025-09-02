@@ -4,7 +4,7 @@
 
 set -euo pipefail
 
-names=(study-planner-thumbnail casablanca-thumbnail)
+names=(study-planner-thumbnail casablanca-thumbnail medtime-thumbnail zentio-thumbnail spaceprogram-thumbnail)
 
 for name in "${names[@]}"; do
   dir="assets/videos/$name"
