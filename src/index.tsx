@@ -364,7 +364,7 @@ I used the **Ant Design** component library to keep the same visual style as the
     It has seemingly impossible features like an infinite feed, buttons that don't refresh the entire site, and vector icons that don't use SVG tags. <br>It uses iframes, obscure HTTP headers, HTML features, and CSS attributes to work around these **limitations**. Some of these techniques are already out there, and some of them I believe I've **pioneered**. I'm not publically hosting this, but I'm planning to do a blog post on the techniques I used.`,
   },
   {
-    imageSrc: "videos/spaceprogram-thumbnail/0001.webp",
+    imageSrc: "videos/spaceprogram-thumbnail/frame_0001.webp",
     videoSrc: "spaceprogram-thumbnail",
     title: "Landable Rocket",
     url: "https://spaceprogram.bolls.dev",

@@ -16,6 +16,7 @@
   "scripts": {
     "dev": "bun run --watch src/index.tsx & bun run bun.config.ts",
     "build": "bun run src/index.tsx",
+    "deploy:no-assets": "bun run build; scp -r out/index.html bolls:/www/linus-bolls-dev/index.html",
     "deploy": "bun run build; scp -r out/* bolls:/www/linus-bolls-dev/"
   },
   "type": "module",
