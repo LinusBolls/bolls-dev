@@ -2,6 +2,8 @@ import gsap from "https://cdn.skypack.dev/gsap@3";
 import ScrollTrigger from "https://cdn.skypack.dev/gsap@3/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
+const ASSET_CACHE_VERSION = 3;
+
 const videos = [
   {
     id: "medtime-thumbnail",
@@ -17,7 +19,7 @@ const videos = [
   },
   {
     id: "casablanca-thumbnail",
-    numFrames: 117,
+    numFrames: 138,
   },
   {
     id: "spaceprogram-thumbnail",
@@ -53,7 +55,10 @@ for (const video of videos) {
   addEventListener("resize", sizeCanvas, { passive: true });
 
   const path = (i) =>
-    `/videos/${video.id}/frame_${String(i).padStart(4, "0")}.webp`;
+    `/videos/${video.id}/frame_${String(i).padStart(
+      4,
+      "0"
+    )}.webp?v=${ASSET_CACHE_VERSION}`;
 
   // LRU cache with eviction
   const cache = new Map(); // i -> ImageBitmap|HTMLImageElement

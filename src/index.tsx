@@ -5,6 +5,8 @@ import React from "react";
 import { renderToString } from "react-dom/server";
 import MarkdownIt from "markdown-it";
 
+const ASSET_CACHE_VERSION = 3;
+
 const BACKGROUND_PATTERN = false;
 
 const markdown = MarkdownIt({ html: true });
@@ -144,6 +146,8 @@ import sharp from "sharp";
 
 const assetsDir = join(__dirname, "../assets");
 const outDir = join(__dirname, "../out");
+
+await fs.promises.cp(assetsDir, outDir, { recursive: true });
 
 const avatarPath = join(assetsDir, "avatar.webp");
 const bannerPath = join(outDir, "banner.webp");
@@ -292,7 +296,8 @@ const addContactQrCodeSvg = await QRCode.toString(vcardDataUri, {
 
 const projects = [
   {
-    imageSrc: "videos/medtime-thumbnail/frame_0001.webp",
+    imageSrc:
+      "videos/medtime-thumbnail/frame_0001.webp?v=" + ASSET_CACHE_VERSION,
     videoSrc: "medtime-thumbnail",
     title: "MedTime",
     url: "https://vettime.de",
@@ -300,7 +305,8 @@ const projects = [
     <br>When I first joined my three co-founders, their prototype was **vibe-coded** using Replit and already had live users - I loved that they were efficient about validating the product, but this is by far the **messiest codebase** i ever took over... More power to vibe coders - but *please* don't use Replit lol`,
   },
   {
-    imageSrc: "videos/zentio-thumbnail/frame_0001.webp",
+    imageSrc:
+      "videos/zentio-thumbnail/frame_0001.webp?v=" + ASSET_CACHE_VERSION,
     videoSrc: "zentio-thumbnail",
     title: "Zentio",
     url: "https://zentio.io",
@@ -316,7 +322,8 @@ const projects = [
 I spent a lot of time reverse-engineering and **scraping** the LinkedIn API, so I'm your guy for any LinkedIn-specific work.`,
   },
   {
-    imageSrc: "videos/study-planner-thumbnail/frame_0001.webp",
+    imageSrc:
+      "videos/study-planner-thumbnail/frame_0001.webp?v=" + ASSET_CACHE_VERSION,
     videoSrc: "study-planner-thumbnail",
     title: "CODE Study Planner",
     url: "https://planner.project.code.berlin",
@@ -349,7 +356,8 @@ I used the **Ant Design** component library to keep the same visual style as the
     <br>This was my first time using **React Native**, and my first time publishing an app to the **App Store**. The rooms in the floorplan are clickable, and dynamically generated from a **Figma SVG export**.`,
   },
   {
-    imageSrc: "videos/casablanca-thumbnail/frame_0001.webp",
+    imageSrc:
+      "videos/casablanca-thumbnail/frame_0001.webp?v=" + ASSET_CACHE_VERSION,
     videoSrc: "casablanca-thumbnail",
     title: "Casablanca AI",
     url: "https://casablanca.ai",
@@ -364,7 +372,8 @@ I used the **Ant Design** component library to keep the same visual style as the
     It has seemingly impossible features like an infinite feed, buttons that don't refresh the entire site, and vector icons that don't use SVG tags. <br>It uses iframes, obscure HTTP headers, HTML features, and CSS attributes to work around these **limitations**. Some of these techniques are already out there, and some of them I believe I've **pioneered**. I'm not publically hosting this, but I'm planning to do a blog post on the techniques I used.`,
   },
   {
-    imageSrc: "videos/spaceprogram-thumbnail/frame_0001.webp",
+    imageSrc:
+      "videos/spaceprogram-thumbnail/frame_0001.webp?v=" + ASSET_CACHE_VERSION,
     videoSrc: "spaceprogram-thumbnail",
     title: "Landable Rocket",
     url: "https://spaceprogram.bolls.dev",
@@ -658,5 +667,3 @@ async function generateBanner() {
   await fs.promises.rm(bannerPath + ".png");
 }
 generateBanner();
-
-await fs.promises.cp(assetsDir, outDir, { recursive: true });
