@@ -37,8 +37,8 @@ for (const video of videos) {
     "/videos/" + video.id + "/frame_" + String(i).padStart(4, "0") + ".webp";
 
   function setCanvasSize() {
-    canvas.width = 568;
-    canvas.height = 355;
+    canvas.width = 568 * 10;
+    canvas.height = 355 * 10;
   }
   function draw(i) {
     const img = images[i];
