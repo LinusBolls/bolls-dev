@@ -5,7 +5,7 @@ import React from "react";
 import { renderToString } from "react-dom/server";
 import MarkdownIt from "markdown-it";
 
-const ASSET_CACHE_VERSION = 3;
+const ASSET_CACHE_VERSION = 5;
 
 const BACKGROUND_PATTERN = false;
 
@@ -461,7 +461,7 @@ const Site: React.FC = () => {
         />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Linus Bolls - Contact Info</title>
+        <title>Linus Bolls</title>
         <meta
           name="description"
           content="I'm Linus, a fullstack engineer with a passion for good UX and effective meetings ツ"
@@ -470,7 +470,7 @@ const Site: React.FC = () => {
           name="keywords"
           content="Linus Bolls, Software Engineer, Freelancer, Fullstack Developer, Web Developer, Berlin, Portfolio, LinkedIn"
         />
-        <meta property="og:title" content="Linus Bolls - Contact Info" />
+        <meta property="og:title" content="Linus Bolls" />
         <meta property="og:description" content="" />
         <meta property="og:image" content="/banner.webp" />
         <link
@@ -478,6 +478,7 @@ const Site: React.FC = () => {
           type="image/svg+xml"
           href={`data:image/svg+xml,${encodeURIComponent(faviconSvg)}`}
         />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <style
           dangerouslySetInnerHTML={{
             __html: `

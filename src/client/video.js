@@ -2,28 +2,28 @@ import gsap from "https://cdn.skypack.dev/gsap@3";
 import ScrollTrigger from "https://cdn.skypack.dev/gsap@3/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-const ASSET_CACHE_VERSION = 3;
+const ASSET_CACHE_VERSION = 5;
 
 const videos = [
   {
     id: "medtime-thumbnail",
-    numFrames: 318,
+    numFrames: 100,
   },
   {
     id: "zentio-thumbnail",
-    numFrames: 552,
+    numFrames: 100,
   },
   {
     id: "study-planner-thumbnail",
-    numFrames: 149,
+    numFrames: 100,
   },
   {
     id: "casablanca-thumbnail",
-    numFrames: 138,
+    numFrames: 100,
   },
   {
     id: "spaceprogram-thumbnail",
-    numFrames: 82,
+    numFrames: 100,
   },
 ];
 

@@ -13,8 +13,8 @@ for name in "${names[@]}"; do
 
   ffmpeg -y -hide_banner \
     -i "assets/${name}.mov" \
-    -map 0:v:0 -vf "fps=30,scale=1104:690" \
+    -vf "fps=100/$(ffprobe -v error -show_entries format=duration -of csv=p=0 assets/${name}.mov),scale=1104:690" \
+    -frames:v 100 \
     -c:v libwebp -q:v 80 -lossless 0 -preset picture \
-    -f image2 -update 0 \
     "${dir}/frame_%04d.webp"
 done
