@@ -2,149 +2,211 @@ import gsap from "https://cdn.skypack.dev/gsap@3";
 import ScrollTrigger from "https://cdn.skypack.dev/gsap@3/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-const ASSET_CACHE_VERSION = 5;
+/**
+ * Scroll-scrub spritesheet player (staged canvas blit)
+ * - Decodes sheets once (ImageBitmap LRU)
+ * - For each sheet, scales it ONCE into a hidden staging canvas sized:
+ *     (SHEET_COLS * frameW) x (SHEET_ROWS * frameH)
+ * - Each frame = 1:1 blit from staging sub-rect -> visible canvas (no resample)
+ * - Creates hidden canvases programmatically (uses OffscreenCanvas when available)
+ */
+
+const ASSET_CACHE_VERSION = 36;
 
 const videos = [
-  {
-    id: "medtime-thumbnail",
-    numFrames: 100,
-  },
-  {
-    id: "zentio-thumbnail",
-    numFrames: 100,
-  },
-  {
-    id: "study-planner-thumbnail",
-    numFrames: 100,
-  },
-  {
-    id: "casablanca-thumbnail",
-    numFrames: 100,
-  },
-  {
-    id: "spaceprogram-thumbnail",
-    numFrames: 100,
-  },
+  { id: "medtime-thumbnail", numFrames: 100 },
+  { id: "zentio-thumbnail", numFrames: 100 },
+  { id: "study-planner-thumbnail", numFrames: 100 },
+  { id: "casablanca-thumbnail", numFrames: 100 },
+  { id: "spaceprogram-thumbnail", numFrames: 100 },
 ];
 
-const MAX_PIXELS = 4_000_000; // ~4MP/frame budget; adjust to 6–8MP if safe
+const FRAMES_PER_SHEET = 100;
+const SHEET_COLS = 10;
+const SHEET_ROWS = 10;
+
+const MAX_PIXELS = 4_000_000; // ~4MP/frame budget
+
+// UA knobs
+const ua = navigator.userAgent;
+const isSafari = /^((?!chrome|android).)*safari/i.test(ua);
+const isFirefox = /firefox/i.test(ua);
+const PREFETCH_AHEAD = isSafari || isFirefox ? 6 : 12;
+const CONCURRENCY = isSafari || isFirefox ? 2 : 4;
+const CACHE_LIMIT_SHEETS = isSafari || isFirefox ? 4 : 8;
+const HARD_DPR_CAP = isSafari || isFirefox ? 2 : 3;
+
 function computeDPR(rect) {
   const dpr = window.devicePixelRatio || 1;
   const cap = Math.sqrt(MAX_PIXELS / (rect.width * rect.height));
-  return Math.max(1, Math.min(dpr, cap || 1, 3)); // hard-cap at 3x
+  return Math.max(1, Math.min(dpr, cap || 1, HARD_DPR_CAP));
 }
-const CACHE_LIMIT = 30; // keep ~30 frames max in memory
-const PREFETCH_AHEAD = 12; // window size ahead/behind
-const CONCURRENCY = 4; // cap concurrent fetch/decodes
+
+function frameToSheet(frameIndex) {
+  const zeroBased = frameIndex - 1;
+  const sheetIndex = Math.floor(zeroBased / FRAMES_PER_SHEET) + 1; // 1-based
+  const inSheetIdx = zeroBased % FRAMES_PER_SHEET; // 0..99
+  const col = inSheetIdx % SHEET_COLS; // 0..9
+  const row = Math.floor(inSheetIdx / SHEET_COLS); // 0..9
+  return { sheetIndex, inSheetIdx, col, row };
+}
+
+function touch(map, key, val) {
+  map.delete(key);
+  map.set(key, val);
+}
+function evictLRU(map, limit, onEvict) {
+  while (map.size > limit) {
+    const [k, v] = map.entries().next().value;
+    map.delete(k);
+    try {
+      onEvict?.(v);
+    } catch {}
+  }
+}
+
+// Concurrency limiter
+const queue = [];
+let running = 0;
+function enqueue(fn) {
+  return new Promise((res, rej) => {
+    queue.push({ fn, res, rej });
+    pump();
+  });
+}
+function pump() {
+  while (running < CONCURRENCY && queue.length) {
+    const { fn, res, rej } = queue.shift();
+    running++;
+    fn()
+      .then(res, rej)
+      .finally(() => {
+        running--;
+        pump();
+      });
+  }
+}
 
 for (const video of videos) {
   const canvas = document.querySelector(`canvas[data-video="${video.id}"]`);
-  const ctx = canvas.getContext("2d", { alpha: false });
+  if (!canvas) continue;
+  const ctx = canvas.getContext("2d", { alpha: true }); // setting alpha: false is apparently more performant (can't really tell visually), but makes the canvas opaque, which means or placeholder webp isn't visible through it.
 
-  // Set canvas once based on its CSS size
-  function sizeCanvas() {
+  const extendWC = tempWillChange(canvas, "transform", 180); // prevent page glitching on firefox on scroll with console warning "Will-change memory consumption is too high. Budget limit is the document surface area multiplied by 3 (548595 px). Occurrences of will-change over the budget will be ignored."
+
+  // --- Hidden staging canvas per video ---
+  const useOffscreen = typeof OffscreenCanvas !== "undefined";
+  const staging = useOffscreen
+    ? new OffscreenCanvas(1, 1)
+    : document.createElement("canvas");
+  if (!useOffscreen) {
+    staging.width = 1;
+    staging.height = 1;
+    staging.style.display = "none";
+    staging.setAttribute("aria-hidden", "true");
+    // Keep it in DOM so some browsers keep it GPU-backed
+    canvas.parentNode?.insertBefore(staging, canvas.nextSibling);
+  }
+  const sctx = staging.getContext("2d", { alpha: false });
+  // Track which sheet is currently staged (0 = none)
+  let stagedSheetIndex = 0;
+  function sizeCanvases() {
     const rect = canvas.getBoundingClientRect();
     const DPR = computeDPR(rect);
-    canvas.width = Math.round(rect.width * DPR);
-    canvas.height = Math.round(rect.height * DPR);
-    // draw in device pixels; no scaling transform
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
-    ctx.imageSmoothingEnabled = false; // 1:1 → crisp
-  }
-  sizeCanvas();
-  addEventListener("resize", sizeCanvas, { passive: true });
+    const vw = Math.max(1, Math.round(rect.width * DPR));
+    const vh = Math.max(1, Math.round(rect.height * DPR));
 
-  const path = (i) =>
-    `/videos/${video.id}/frame_${String(i).padStart(
+    // Resize visible if needed
+    if (canvas.width !== vw || canvas.height !== vh) {
+      canvas.width = vw;
+      canvas.height = vh;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.imageSmoothingEnabled = false;
+    }
+
+    // Staging must be COLS*vw by ROWS*vh so each frame is 1:1 area
+    const sw = SHEET_COLS * vw;
+    const sh = SHEET_ROWS * vh;
+    if (staging.width !== sw || staging.height !== sh) {
+      staging.width = sw;
+      staging.height = sh;
+      sctx.setTransform(1, 0, 0, 1, 0, 0);
+      sctx.imageSmoothingEnabled = false;
+      // Force re-render of current sheet onto staging after resize
+      stagedSheetIndex = 0; // invalidate
+    }
+
+    // Cache current per-frame dims
+    dims.vw = vw;
+    dims.vh = vh;
+    dims.sw = sw;
+    dims.sh = sh;
+  }
+
+  const dims = { vw: 0, vh: 0, sw: 0, sh: 0 };
+
+  sizeCanvases();
+  addEventListener("resize", sizeCanvases, { passive: true });
+
+  const sheetPath = (sheetIndex) =>
+    `/videos/${video.id}/chunk_${String(sheetIndex).padStart(
       4,
       "0"
     )}.webp?v=${ASSET_CACHE_VERSION}`;
 
-  // LRU cache with eviction
-  const cache = new Map(); // i -> ImageBitmap|HTMLImageElement
-  function touch(i, val) {
-    cache.delete(i);
-    cache.set(i, val);
-  }
-  function evictIfNeeded() {
-    while (cache.size > CACHE_LIMIT) {
-      const [oldestI, val] = cache.entries().next().value;
-      cache.delete(oldestI);
-      if (val && "close" in val) {
-        try {
-          val.close();
-        } catch {}
-      }
-    }
-  }
+  // SHEET cache (ImageBitmap)
+  const sheetCache = new Map(); // sheetIndex -> ImageBitmap
 
-  // Simple queue to limit concurrency
-  const queue = [];
-  let running = 0;
-  async function enqueue(fn) {
-    return new Promise((res, rej) => {
-      queue.push({ fn, res, rej });
-      pump();
-    });
-  }
-  async function pump() {
-    while (running < CONCURRENCY && queue.length) {
-      const { fn, res, rej } = queue.shift();
-      running++;
-      fn()
-        .then(res, rej)
-        .finally(() => {
-          running--;
-          pump();
-        });
-    }
-  }
-
-  async function decodeFrame(i) {
-    if (cache.has(i)) return cache.get(i);
-    // Fetch
-    const res = await fetch(path(i), { cache: "force-cache" });
+  async function decodeSheet(sheetIndex) {
+    if (sheetCache.has(sheetIndex)) return sheetCache.get(sheetIndex);
+    const res = await fetch(sheetPath(sheetIndex), { cache: "force-cache" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const blob = await res.blob();
-
-    // Try ImageBitmap with resize to canvas size for lower memory
-    const targetW = canvas.width;
-    const targetH = canvas.height;
-    let bmp;
-    try {
-      bmp = await createImageBitmap(blob, {
-        resizeWidth: targetW,
-        resizeHeight: targetH,
-        // resizeQuality: "high", // optional; Safari may ignore
-      });
-      touch(i, bmp);
-    } catch {
-      // Fallback to <img>
-      const url = URL.createObjectURL(blob);
-      const img = new Image();
-      img.decoding = "async";
-      img.src = url;
-      await img.decode();
-      URL.revokeObjectURL(url);
-      touch(i, img);
-    }
-    evictIfNeeded();
-    return cache.get(i);
+    const bmp = await createImageBitmap(blob);
+    touch(sheetCache, sheetIndex, bmp);
+    evictLRU(sheetCache, CACHE_LIMIT_SHEETS, (b) => b.close?.());
+    return bmp;
   }
 
-  function draw(i) {
-    const frame = cache.get(i);
-    if (!frame) return;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(frame, 0, 0, canvas.width, canvas.height); // 1:1 in device px
+  // Draw entire decoded sheet onto staging canvas ONCE per sheet/resize
+  // stagedSheetIndex declared above before sizeCanvases() to avoid TDZ; initialized to 0 (none)
+  async function ensureStagedSheet(sheetIndex) {
+    if (stagedSheetIndex === sheetIndex) return;
+    const sheetBmp = await decodeSheet(sheetIndex);
+    // Scale the whole sheet to staging dimensions once
+
+    sctx.drawImage(
+      sheetBmp,
+      0,
+      0,
+      sheetBmp.width,
+      sheetBmp.height,
+      0,
+      0,
+      staging.width,
+      staging.height
+    );
+    stagedSheetIndex = sheetIndex;
   }
 
-  // Kick off first frame quickly
-  enqueue(() => decodeFrame(1)).then(() => draw(1));
+  function blitFrameFromStaging(frameIndex) {
+    const { col, row } = frameToSheet(frameIndex);
+    const sx = col * dims.vw;
+    const sy = row * dims.vh;
+    // 1:1 copy: no scaling during blit
+    ctx.drawImage(staging, sx, sy, dims.vw, dims.vh, 0, 0, dims.vw, dims.vh);
+  }
+
+  // Kick off with sheet 1
+  let currentSheetIndex = 1;
+  const state = { i: 1 };
+
+  enqueue(() => ensureStagedSheet(1)).then(() => {
+    blitFrameFromStaging(1);
+  });
 
   const isRocket = video.id === "spaceprogram-thumbnail";
 
-  // Scroll-driven playback with lazy loading + prefetch window
-  const state = { i: 1 };
   ScrollTrigger.create({
     trigger: canvas,
     start: isRocket ? "bottom bottom-=20" : "top bottom",
@@ -159,21 +221,55 @@ for (const video of videos) {
           1 + self.progress * (video.numFrames - 1)
         )
       );
-      if (next !== state.i) {
-        state.i = next;
-        // Draw now if available; otherwise will draw when loaded
-        if (cache.has(next)) draw(next);
-      }
-      // Prefetch neighborhood
+      if (next === state.i) return;
+      state.i = next;
+
+      // Prefetch nearby sheets
       const start = Math.max(1, next - PREFETCH_AHEAD);
       const end = Math.min(video.numFrames, next + PREFETCH_AHEAD);
-      for (let j = start; j <= end; j++) {
-        if (!cache.has(j))
-          enqueue(() => decodeFrame(j)).then(() => {
-            if (j === state.i) draw(j);
-          });
-      }
-      // Optional: proactively drop far-away frames (kept by LRU anyway)
+      const neededSheets = new Set();
+      for (let j = start; j <= end; j++)
+        neededSheets.add(frameToSheet(j).sheetIndex);
+      for (const s of neededSheets)
+        if (!sheetCache.has(s)) enqueue(() => decodeSheet(s));
+
+      // Stage active sheet (if changed) then blit frame
+      enqueue(async () => {
+        const { sheetIndex } = frameToSheet(next);
+        if (sheetIndex !== currentSheetIndex) {
+          await ensureStagedSheet(sheetIndex);
+          currentSheetIndex = sheetIndex;
+        } else if (stagedSheetIndex !== sheetIndex) {
+          // Handle resize invalidation: restage current sheet
+          await ensureStagedSheet(sheetIndex);
+        }
+        blitFrameFromStaging(next);
+      });
+      extendWC();
+    },
+    onLeave: () => {
+      canvas.style.willChange = "";
+    },
+    onLeaveBack: () => {
+      canvas.style.willChange = "";
     },
   });
+}
+
+function tempWillChange(el, prop = "transform", ttl = 200) {
+  if (!el) return () => {};
+  // Only set if not already present
+  const old = el.style.willChange;
+  if (!old) el.style.willChange = prop;
+
+  let timer = null;
+  const scheduleClear = () => {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(() => {
+      // Clear only if we were the ones who set it
+      if (el.style.willChange === prop) el.style.willChange = "";
+    }, ttl);
+  };
+
+  return scheduleClear; // call after each burst to extend TTL
 }

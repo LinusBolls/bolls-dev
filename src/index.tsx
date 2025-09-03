@@ -5,7 +5,7 @@ import React from "react";
 import { renderToString } from "react-dom/server";
 import MarkdownIt from "markdown-it";
 
-const ASSET_CACHE_VERSION = 5;
+const ASSET_CACHE_VERSION = 6;
 
 const BACKGROUND_PATTERN = false;
 
