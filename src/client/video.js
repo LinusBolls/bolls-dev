@@ -36,9 +36,7 @@ async function main() {
 
     if (!canvas) continue;
 
-    const ctx = canvas.getContext("2d", { alpha: true }); // setting alpha: false is apparently more performant (can't really tell visually), but makes the canvas opaque, which means or placeholder webp isn't visible through it.
-
-    // const extendWC = tempWillChange(canvas, "transform", 180); // prevent page glitching on firefox on scroll with console warning "Will-change memory consumption is too high. Budget limit is the document surface area multiplied by 3 (548595 px). Occurrences of will-change over the budget will be ignored."
+    const ctx = canvas.getContext("2d", { alpha: false });
 
     const useOffscreen = typeof OffscreenCanvas !== "undefined";
 
@@ -147,6 +145,9 @@ async function main() {
 
     const state = { i: 1 };
 
+    let rafScheduled = false;
+    let pendingFrame = null;
+
     ScrollTrigger.create({
       trigger: canvas,
       start: isRocket ? "bottom bottom-=20" : "top bottom",
@@ -165,10 +166,19 @@ async function main() {
         );
         if (next === state.i) return;
         state.i = next;
+        pendingFrame = next;
 
-        blitFrameFromStaging(next);
-
-        // extendWC();
+        if (!rafScheduled) {
+          rafScheduled = true;
+          requestAnimationFrame(() => {
+            rafScheduled = false;
+            // draw only the latest requested frame
+            if (pendingFrame != null) {
+              blitFrameFromStaging(pendingFrame);
+              pendingFrame = null;
+            }
+          });
+        }
       },
       onLeave: () => {
         canvas.style.willChange = "";
@@ -178,24 +188,6 @@ async function main() {
       },
     });
   }
-}
-
-function tempWillChange(el, prop = "transform", ttl = 200) {
-  if (!el) return () => {};
-  // Only set if not already present
-  const old = el.style.willChange;
-  if (!old) el.style.willChange = prop;
-
-  let timer = null;
-  const scheduleClear = () => {
-    if (timer) clearTimeout(timer);
-    timer = setTimeout(() => {
-      // Clear only if we were the ones who set it
-      if (el.style.willChange === prop) el.style.willChange = "";
-    }, ttl);
-  };
-
-  return scheduleClear; // call after each burst to extend TTL
 }
 
 function defer() {
