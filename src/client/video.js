@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
  * - Creates hidden canvases programmatically (uses OffscreenCanvas when available)
  */
 
-const ASSET_CACHE_VERSION = 36;
+const ASSET_CACHE_VERSION = 37;
 
 const videos = [
   { id: "medtime-thumbnail", numFrames: 100 },
@@ -168,10 +168,21 @@ for (const video of videos) {
     return bmp;
   }
 
+  let isLoadingCurrentSheet = false;
+  let loadingCurrentSheetPromise = null;
+
   // Draw entire decoded sheet onto staging canvas ONCE per sheet/resize
   // stagedSheetIndex declared above before sizeCanvases() to avoid TDZ; initialized to 0 (none)
   async function ensureStagedSheet(sheetIndex) {
-    if (stagedSheetIndex === sheetIndex) return;
+    if (stagedSheetIndex === sheetIndex) {
+      if (isLoadingCurrentSheet)
+        return await loadingCurrentSheetPromise?.promise;
+      return;
+    }
+
+    isLoadingCurrentSheet = true;
+    loadingCurrentSheetPromise = defer();
+
     const sheetBmp = await decodeSheet(sheetIndex);
     // Scale the whole sheet to staging dimensions once
 
@@ -186,7 +197,12 @@ for (const video of videos) {
       staging.width,
       staging.height
     );
+
     stagedSheetIndex = sheetIndex;
+
+    isLoadingCurrentSheet = false;
+
+    loadingCurrentSheetPromise.resolve();
   }
 
   function blitFrameFromStaging(frameIndex) {
@@ -272,4 +288,15 @@ function tempWillChange(el, prop = "transform", ttl = 200) {
   };
 
   return scheduleClear; // call after each burst to extend TTL
+}
+
+function defer() {
+  let resolve, reject;
+
+  const promise = new Promise((res, rej) => {
+    resolve = res;
+    reject = rej;
+  });
+
+  return { promise, resolve, reject };
 }
