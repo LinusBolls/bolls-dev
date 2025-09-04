@@ -1,9 +1,31 @@
+/**
+ * each video has 100 frames.
+ * for each, we fetch a spritesheet .webp with 10x10 of these frames on it.
+ * we draw this webp onto an invisible "staging" canvas.
+ * when the user scrolls, we just copy a section of the staging canvas onto the visible canvas.
+ *
+ * this approach offers
+ * - very fast video loading in decent resolution
+ * - smooth scrolling
+ * - low memory usage (except on mount, when the spritesheet is getting drawn onto the staging canvas)
+ *
+ * in the future, i'll see if i can use a .mp4 as a spritesheet instead, to make use of inter-frame compression.
+ * for the videos i use, an mp4 of the same resolution with the same amount of frames is about 10x smaller (e.g. 3.14MB -> 341KB).
+ * this means i could potentially increase the resolution and framerate of the videos at no bandwidth cost.
+ *
+ * as a drawback, i expect splitting an mp4 into seperate frames in the browser to be very slow and memory intensive.
+ * fetching more data is also only half of the equation, i'll also need to store it efficiently.
+ * i haven't tested it yet, but i'd expect to be hitting the performance limit of the staging canvas approach with this.
+ *
+ */
+
 import gsap from "https://cdn.skypack.dev/gsap@3";
 import ScrollTrigger from "https://cdn.skypack.dev/gsap@3/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ASSET_CACHE_VERSION = 37;
+// for cache busting the url when we change the videos
+const ASSET_CACHE_VERSION = 38;
 
 const numFrames = 100;
 const sheetCols = 10;
@@ -36,15 +58,16 @@ async function main() {
 
     if (!canvas) continue;
 
+    // alpha: false is more performant, but it will cover up the placeholder webp we use while the video is loading
+    // to fix this, the canvas has an inline style of opacity: 0, which we set to 1 after loading
     const ctx = canvas.getContext("2d", { alpha: false });
 
     const useOffscreen = typeof OffscreenCanvas !== "undefined";
 
-    let loading = null;
-
     const staging = useOffscreen
       ? new OffscreenCanvas(1, 1)
       : document.createElement("canvas");
+
     if (!useOffscreen) {
       staging.width = 1;
       staging.height = 1;
@@ -57,7 +80,7 @@ async function main() {
 
     const dims = { vw: 0, vh: 0, sw: 0, sh: 0 };
 
-    async function sizeCanvases() {
+    async function loadStagingCanvas() {
       const rect = canvas.getBoundingClientRect();
       const DPR = computeDPR(rect);
       const vw = Math.max(1, Math.round(rect.width * DPR));
@@ -78,15 +101,13 @@ async function main() {
         sctx.setTransform(1, 0, 0, 1, 0, 0);
         sctx.imageSmoothingEnabled = false;
 
-        await ensureStagedSheet();
+        await drawStagedSheet();
       }
       dims.vw = vw;
       dims.vh = vh;
       dims.sw = sw;
       dims.sh = sh;
     }
-    await sizeCanvases();
-    addEventListener("resize", sizeCanvases, { passive: true });
 
     function sheetPath(sheetIndex) {
       return `/videos/${video.id}/chunk_${String(sheetIndex).padStart(
@@ -95,34 +116,51 @@ async function main() {
       )}.webp?v=${ASSET_CACHE_VERSION}`;
     }
 
-    async function ensureStagedSheet() {
-      if (loading) return await loading.promise;
+    let fetchPromise = null;
 
-      loading = defer();
+    async function drawStagedSheet() {
+      // we could leave this out since this function only gets called once on load and then on resize
+      // so this will only happen if the user resizes right after page load
+      // but it's a bit cleaner to keep this here i think
+      if (fetchPromise) return await fetchPromise;
 
-      const res = await fetch(sheetPath(1), { cache: "force-cache" });
+      const now = performance.now();
+
+      fetchPromise = fetch(sheetPath(1), {
+        cache: "force-cache",
+      });
+
+      const res = await fetchPromise;
 
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
       const blob = await res.blob();
 
-      const sheetBmp = await createImageBitmap(blob);
+      const bmp = await createImageBitmap(blob);
 
       sctx.drawImage(
-        sheetBmp,
+        bmp,
         0,
         0,
-        sheetBmp.width,
-        sheetBmp.height,
+        bmp.width,
+        bmp.height,
         0,
         0,
         staging.width,
         staging.height
       );
-      loading.resolve();
-      loading = null;
+      canvas.style.opacity = 1;
 
-      sheetBmp.close();
+      bmp.close();
+
+      fetchPromise = null;
+
+      console.info(
+        video.id,
+        "loaded in",
+        Math.round(performance.now() - now),
+        "ms"
+      );
     }
 
     function frameToSheet(frameIndex) {
@@ -143,19 +181,24 @@ async function main() {
 
     const isRocket = video.id === "spaceprogram-thumbnail";
 
-    const state = { i: 1 };
+    const state = { i: 0 };
 
     let rafScheduled = false;
     let pendingFrame = null;
 
-    ScrollTrigger.create({
+    // load video and put onto staging canvas before mounting the ScrollTrigger
+    await loadStagingCanvas();
+    // resize staging canvas on resize
+    addEventListener("resize", loadStagingCanvas, { passive: true });
+
+    const st = ScrollTrigger.create({
       trigger: canvas,
       start: isRocket ? "bottom bottom-=20" : "top bottom",
       end: isRocket ? "bottom top-=130" : "bottom top",
       pin: false,
       scrub: true,
       onUpdate: (self) => {
-        if (loading) return;
+        if (fetchPromise) return; // since we only create the ScrollTrigger after loading, this only happens on resize
 
         const next = Math.round(
           gsap.utils.clamp(
@@ -187,17 +230,10 @@ async function main() {
         canvas.style.willChange = "";
       },
     });
+    // the very first canvas draw after page load is a bit laggy
+    // the ScrollTrigger only calls onUpdate once the canvas is scrolled into view, which makes the first page scroll laggy
+    // to fix this, we manually call the onUpdate function once after loading the video
+    st.vars.onUpdate(st);
   }
-}
-
-function defer() {
-  let resolve, reject;
-
-  const promise = new Promise((res, rej) => {
-    resolve = res;
-    reject = rej;
-  });
-
-  return { promise, resolve, reject };
 }
 main();

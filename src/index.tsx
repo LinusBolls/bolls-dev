@@ -5,7 +5,7 @@ import React from "react";
 import { renderToString } from "react-dom/server";
 import MarkdownIt from "markdown-it";
 
-const ASSET_CACHE_VERSION = 37;
+const ASSET_CACHE_VERSION = 38;
 
 const BACKGROUND_PATTERN = false;
 
@@ -187,6 +187,7 @@ const ProjectCard: React.FC<{
             width: "100%",
             aspectRatio: 1.6,
             borderRadius: "0.25rem",
+            opacity: 0,
           }}
         />
       )}
