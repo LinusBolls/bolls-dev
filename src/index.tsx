@@ -459,8 +459,14 @@ const Site: React.FC = () => {
           content="Linus Bolls, Software Engineer, Freelancer, Fullstack Developer, Web Developer, Berlin, Portfolio, LinkedIn"
         />
         <meta property="og:title" content="Linus Bolls" />
-        <meta property="og:description" content="" />
+        <meta
+          property="og:description"
+          content="Freelance Software Developer · Berlin, Germany"
+        />
         <meta property="og:image" content="/banner.webp" />
+        <meta property="og:type" content="profile" />
+        <meta property="profile:first_name" content="Linus" />
+        <meta property="profile:last_name" content="Bolls" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <style
@@ -579,6 +585,28 @@ html {
     transform: none !important;
   }
 }`,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Linus Bolls",
+              image: "https://linus.bolls.dev/avatar.webp",
+              jobTitle: "Freelance Software Developer",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Berlin",
+                addressCountry: "DE",
+              },
+              url: "https://linus.bolls.dev",
+              sameAs: [
+                "https://www.linkedin.com/in/LinusBolls/",
+                "https://github.com/LinusBolls",
+              ],
+            }),
           }}
         />
       </head>
