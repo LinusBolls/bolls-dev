@@ -461,7 +461,8 @@ const Site: React.FC = () => {
         <meta property="og:title" content="Linus Bolls" />
         <meta property="og:description" content="" />
         <meta property="og:image" content="/banner.webp" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <style
           dangerouslySetInnerHTML={{
             __html: `
