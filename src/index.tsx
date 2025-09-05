@@ -607,6 +607,7 @@ html {
                 "https://github.com/LinusBolls",
                 "https://www.npmjs.com/~linus-bolls",
                 "https://www.instagram.com/linus.bolls",
+                "https://bsky.app/profile/linus.bolls.dev",
               ],
               seeks: {
                 "@type": "JobPosting",
