@@ -607,6 +607,20 @@ html {
                 "https://github.com/LinusBolls",
                 "https://www.npmjs.com/~linus-bolls",
               ],
+              seeks: {
+                "@type": "JobPosting",
+                title: "Freelance Software Engineer",
+                jobTitle: "Freelance Software Engineer",
+                employmentType: "CONTRACTOR",
+                jobLocation: {
+                  "@type": "Place",
+                  address: {
+                    "@type": "PostalAddress",
+                    addressLocality: "Berlin",
+                    addressCountry: "DE",
+                  },
+                },
+              },
             }),
           }}
         />
