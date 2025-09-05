@@ -605,6 +605,7 @@ html {
               sameAs: [
                 "https://www.linkedin.com/in/LinusBolls/",
                 "https://github.com/LinusBolls",
+                "https://www.npmjs.com/~linus-bolls",
               ],
             }),
           }}
