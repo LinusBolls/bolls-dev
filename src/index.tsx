@@ -606,6 +606,7 @@ html {
                 "https://www.linkedin.com/in/LinusBolls/",
                 "https://github.com/LinusBolls",
                 "https://www.npmjs.com/~linus-bolls",
+                "https://www.instagram.com/linus.bolls",
               ],
               seeks: {
                 "@type": "JobPosting",
